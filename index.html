@@ -255,6 +255,113 @@
   .reveal-d2 { transition-delay: .2s; }
   .reveal-d3 { transition-delay: .3s; }
   .reveal-d4 { transition-delay: .4s; }
+ 
+  /* ─── HAMBURGER ─── */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    cursor: pointer; padding: 4px; background: none; border: none;
+  }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all .25s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+ 
+  .mobile-menu {
+    display: none; position: fixed; top: 68px; left: 0; right: 0;
+    background: rgba(9,13,19,0.97); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 5% 24px; z-index: 99;
+    flex-direction: column; gap: 0;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    padding: 14px 0; font-size: 1rem; color: var(--muted);
+    text-decoration: none; border-bottom: 1px solid var(--border);
+    transition: color .2s;
+  }
+  .mobile-menu a:hover { color: var(--text); }
+  .mobile-menu .nav-cta {
+    margin-top: 16px; text-align: center; padding: 13px;
+    background: var(--accent) !important; color: #08110A !important;
+    border-radius: 100px; font-weight: 500 !important; border: none;
+  }
+ 
+  /* ─── TABLET 768px ─── */
+  @media(max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+ 
+    section { padding: 72px 5%; }
+    #hero { padding: 100px 5% 64px; }
+ 
+    .hero-stats { gap: 28px; padding-top: 32px; margin-top: 48px; }
+    .hero-stat-n { font-size: 1.7rem; }
+    .hero-stat-l { font-size: .72rem; }
+ 
+    .service-card { padding: 32px 24px; }
+    .how-step { padding: 32px 24px; }
+    .why-card { padding: 24px; }
+ 
+    .cta-box { padding: 44px 28px; }
+    .cta-title { font-size: 1.9rem; }
+ 
+    .price-card { padding: 32px 24px; }
+    .price-amount { font-size: 2.4rem; }
+ 
+    .stats-inner { padding: 40px 28px; }
+ 
+    footer { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+ 
+    .field-row { grid-template-columns: 1fr; gap: 0; }
+    .form-opts { gap: 8px; }
+ 
+    .services-header { margin-bottom: 36px; }
+  }
+ 
+  /* ─── MOBILE 480px ─── */
+  @media(max-width: 480px) {
+    #hero { padding: 90px 5% 52px; }
+ 
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .btn-primary, .btn-secondary { text-align: center; padding: 15px 24px; }
+ 
+    .hero-stats { flex-direction: column; gap: 20px; align-items: flex-start; padding-left: 4px; }
+    .hero-stat-n { font-size: 1.5rem; }
+ 
+    h2 { font-size: 1.75rem; }
+ 
+    .service-card { padding: 28px 20px; }
+    .service-title { font-size: 1.2rem; }
+ 
+    .how-step { padding: 28px 20px; }
+ 
+    .price-card { padding: 28px 20px; }
+    .price-amount { font-size: 2.1rem; }
+ 
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+    .stat-n { font-size: 2rem; }
+ 
+    .why-card { padding: 20px; }
+ 
+    .cta-box { padding: 36px 20px; border-radius: 20px; }
+    .cta-title { font-size: 1.6rem; }
+    .cta-sub { font-size: .88rem; }
+ 
+    .form-step-dots { gap: 4px; margin-bottom: 28px; }
+    .form-dot { width: 36px; }
+    .form-q { font-size: 1rem; }
+    .form-opt { padding: 12px 14px; font-size: .88rem; }
+    .opt-num { width: 28px; height: 28px; font-size: .75rem; }
+ 
+    .form-nav { flex-direction: column-reverse; gap: 8px; }
+    .btn-form-back { width: 100%; text-align: center; }
+ 
+    .success-recap { flex-direction: column; gap: 14px; text-align: center; }
+ 
+    footer { padding: 28px 5%; }
+    .footer-links { gap: 12px; }
+  }
 </style>
 </head>
 <body>
@@ -285,7 +392,17 @@
     <li><a href="#pricing">Tarifs</a></li>
     <li><a href="#contact" class="nav-cta">Demander un audit</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+ 
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#how" class="mobile-link">Fonctionnement</a>
+  <a href="#pricing" class="mobile-link">Tarifs</a>
+  <a href="#contact" class="nav-cta mobile-link">Demander un audit →</a>
+</div>
  
 <section id="hero">
   <div class="hero-grid"></div>
@@ -585,7 +702,7 @@
 </footer>
  
 <script>
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzHzuMn85C_BTVpUOoMZMdhUHduIopaeVT8LssaSLs54Zw9u-qus0VM-jH2WQf-3JisGQ/exec';
+  const SCRIPT_URL = 'REMPLACE_PAR_TON_URL_APPS_SCRIPT';
   const ans = { ve: '', veLabel: '', parking: '', taille: '' };
  
   function pick(step, label, value) {
@@ -665,6 +782,20 @@
     goTo('ok');
   }
  
+  // Hamburger
+  const hbg = document.getElementById('hamburger');
+  const mob = document.getElementById('mobileMenu');
+  hbg.addEventListener('click', () => {
+    hbg.classList.toggle('open');
+    mob.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(l => {
+    l.addEventListener('click', () => {
+      hbg.classList.remove('open');
+      mob.classList.remove('open');
+    });
+  });
+ 
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
@@ -688,3 +819,8 @@
  
 </body>
 </html>
+ 
+
+
+
+
