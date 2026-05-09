@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
   :root {
     --bg:      #090D13;
     --bg2:     #0F1520;
@@ -23,7 +23,7 @@
     --border:  rgba(255,255,255,0.07);
     --border-strong: rgba(255,255,255,0.13);
   }
-
+ 
   html { scroll-behavior: smooth; }
   body {
     font-family: 'DM Sans', sans-serif;
@@ -32,8 +32,7 @@
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
-
-  /* ─── NAV ─── */
+ 
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 0 5%;
@@ -43,497 +42,213 @@
     backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border);
   }
-
-  /* Logo SVG reproduisant le style ELIOS */
-  .logo-wrap {
-    display: flex; align-items: center;
-    text-decoration: none;
-    gap: 0;
-  }
-
+ 
+  .logo-wrap { display: flex; align-items: center; text-decoration: none; }
   .logo-svg { height: 28px; width: auto; }
-
-  .nav-links {
-    display: flex; align-items: center; gap: 36px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: .88rem; font-weight: 400;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: .01em;
-    transition: color .2s;
-  }
-
+ 
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+  .nav-links a { font-size: .88rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: .01em; transition: color .2s; }
   .nav-links a:hover { color: var(--text); }
-
-  .nav-cta {
-    padding: 9px 22px;
-    background: var(--accent) !important;
-    color: #08110A !important;
-    border-radius: 100px;
-    font-weight: 500 !important;
-    font-size: .85rem !important;
-    transition: opacity .2s !important;
-  }
-
+ 
+  .nav-cta { padding: 9px 22px; background: var(--accent) !important; color: #08110A !important; border-radius: 100px; font-weight: 500 !important; font-size: .85rem !important; transition: opacity .2s !important; }
   .nav-cta:hover { opacity: .85 !important; }
-
-  /* ─── HERO ─── */
-  #hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 130px 5% 90px;
-    position: relative; overflow: hidden;
-  }
-
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(62,207,160,.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(62,207,160,.035) 1px, transparent 1px);
-    background-size: 64px 64px;
-    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 100%);
-  }
-
-  .hero-glow {
-    position: absolute;
-    top: -180px; left: 50%; transform: translateX(-50%);
-    width: 760px; height: 520px;
-    background: radial-gradient(ellipse at center, rgba(62,207,160,.13) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-content {
-    position: relative; z-index: 1;
-    max-width: 860px; margin: 0 auto; text-align: center;
-  }
-
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 6px 18px;
-    border: 1px solid var(--border-strong);
-    border-radius: 100px;
-    font-size: .77rem; color: var(--muted);
-    letter-spacing: .07em; text-transform: uppercase;
-    margin-bottom: 36px;
-    background: rgba(255,255,255,0.025);
-  }
-
-  .badge-dot {
-    width: 6px; height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: blink 2.2s infinite;
-  }
-
+ 
+  #hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 5% 90px; position: relative; overflow: hidden; }
+ 
+  .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(62,207,160,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(62,207,160,.035) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 100%); }
+ 
+  .hero-glow { position: absolute; top: -180px; left: 50%; transform: translateX(-50%); width: 760px; height: 520px; background: radial-gradient(ellipse at center, rgba(62,207,160,.13) 0%, transparent 70%); pointer-events: none; }
+ 
+  .hero-content { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; text-align: center; }
+ 
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; border: 1px solid var(--border-strong); border-radius: 100px; font-size: .77rem; color: var(--muted); letter-spacing: .07em; text-transform: uppercase; margin-bottom: 36px; background: rgba(255,255,255,0.025); }
+ 
+  .badge-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: blink 2.2s infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
-
-  h1 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: clamp(2.8rem, 7vw, 5.4rem);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    color: #fff;
-    margin-bottom: 24px;
-  }
-
+ 
+  h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.8rem, 7vw, 5.4rem); line-height: 1.05; letter-spacing: -0.03em; color: #fff; margin-bottom: 24px; }
   .h1-accent { color: var(--accent); }
-
-  .hero-sub {
-    font-size: 1.12rem;
-    color: var(--muted);
-    font-weight: 300;
-    line-height: 1.75;
-    max-width: 540px; margin: 0 auto 48px;
-  }
-
-  .hero-actions {
-    display: flex; gap: 14px;
-    justify-content: center; flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    padding: 14px 32px;
-    background: var(--accent); color: #08110A;
-    border: none; cursor: pointer; border-radius: 100px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: .95rem; font-weight: 500;
-    text-decoration: none;
-    transition: opacity .2s, transform .15s;
-    display: inline-block;
-  }
-
+ 
+  .hero-sub { font-size: 1.12rem; color: var(--muted); font-weight: 300; line-height: 1.75; max-width: 540px; margin: 0 auto 48px; }
+ 
+  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+ 
+  .btn-primary { padding: 14px 32px; background: var(--accent); color: #08110A; border: none; cursor: pointer; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: .95rem; font-weight: 500; text-decoration: none; transition: opacity .2s, transform .15s; display: inline-block; }
   .btn-primary:hover { opacity: .87; transform: translateY(-1px); }
-
-  .btn-secondary {
-    padding: 14px 32px;
-    background: transparent; color: var(--text);
-    border: 1px solid var(--border-strong);
-    cursor: pointer; border-radius: 100px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: .95rem; font-weight: 400;
-    text-decoration: none;
-    transition: background .2s, transform .15s;
-    display: inline-block;
-  }
-
+ 
+  .btn-secondary { padding: 14px 32px; background: transparent; color: var(--text); border: 1px solid var(--border-strong); cursor: pointer; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: .95rem; font-weight: 400; text-decoration: none; transition: background .2s, transform .15s; display: inline-block; }
   .btn-secondary:hover { background: var(--bg3); transform: translateY(-1px); }
-
-  .hero-stats {
-    display: flex; justify-content: center; gap: 60px;
-    margin-top: 76px; padding-top: 44px;
-    border-top: 1px solid var(--border);
-    flex-wrap: wrap;
-  }
-
-  .hero-stat-n {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.1rem; font-weight: 700;
-    color: #fff; letter-spacing: -0.03em;
-  }
-
+ 
+  .hero-stats { display: flex; justify-content: center; gap: 60px; margin-top: 76px; padding-top: 44px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+  .hero-stat-n { font-family: 'Syne', sans-serif; font-size: 2.1rem; font-weight: 700; color: #fff; letter-spacing: -0.03em; }
   .hero-stat-n span { color: var(--accent); }
   .hero-stat-l { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .09em; margin-top: 5px; }
-
-  /* ─── SECTIONS ─── */
+ 
   section { padding: 110px 5%; }
-
-  .section-label {
-    font-size: .74rem; color: var(--accent);
-    text-transform: uppercase; letter-spacing: .14em;
-    font-weight: 500; margin-bottom: 14px;
-  }
-
-  h2 {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: clamp(2rem, 4vw, 3rem);
-    letter-spacing: -0.025em; color: #fff; line-height: 1.1;
-  }
-
-  .section-sub {
-    font-size: 1rem; color: var(--muted);
-    font-weight: 300; line-height: 1.75;
-    max-width: 480px; margin-top: 14px;
-  }
-
-  /* ─── SERVICES ─── */
-  .services-header {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 24px; align-items: end; margin-bottom: 56px;
-  }
-
+ 
+  .section-label { font-size: .74rem; color: var(--accent); text-transform: uppercase; letter-spacing: .14em; font-weight: 500; margin-bottom: 14px; }
+ 
+  h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.025em; color: #fff; line-height: 1.1; }
+ 
+  .section-sub { font-size: 1rem; color: var(--muted); font-weight: 300; line-height: 1.75; max-width: 480px; margin-top: 14px; }
+ 
+  .services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: end; margin-bottom: 56px; }
   @media(max-width:720px){ .services-header{grid-template-columns:1fr} }
-
-  .services-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
-  }
-
+ 
+  .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   @media(max-width:800px){ .services-grid{grid-template-columns:1fr} }
-
-  .service-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 20px; padding: 44px 40px;
-    position: relative; overflow: hidden;
-    transition: border-color .3s, transform .3s;
-  }
-
+ 
+  .service-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 44px 40px; position: relative; overflow: hidden; transition: border-color .3s, transform .3s; }
   .service-card:hover { border-color: var(--border-strong); transform: translateY(-4px); }
-
-  .service-card.featured {
-    border-color: rgba(62,207,160,.25);
-    background: linear-gradient(135deg, rgba(62,207,160,.055) 0%, var(--bg2) 55%);
-  }
-
+  .service-card.featured { border-color: rgba(62,207,160,.25); background: linear-gradient(135deg, rgba(62,207,160,.055) 0%, var(--bg2) 55%); }
   .service-card.featured:hover { border-color: rgba(62,207,160,.45); }
-
-  .card-glow {
-    position: absolute; top: 0; right: 0;
-    width: 130px; height: 130px;
-    background: radial-gradient(circle at top right, rgba(62,207,160,.09), transparent 70%);
-    pointer-events: none;
-  }
-
-  .service-icon {
-    width: 50px; height: 50px; border-radius: 13px;
-    background: var(--accent-dim); border: 1px solid var(--accent-mid);
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 26px;
-  }
-
+ 
+  .card-glow { position: absolute; top: 0; right: 0; width: 130px; height: 130px; background: radial-gradient(circle at top right, rgba(62,207,160,.09), transparent 70%); pointer-events: none; }
+ 
+  .service-icon { width: 50px; height: 50px; border-radius: 13px; background: var(--accent-dim); border: 1px solid var(--accent-mid); display: flex; align-items: center; justify-content: center; margin-bottom: 26px; }
   .service-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
-  .service-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.4rem; font-weight: 700;
-    color: #fff; letter-spacing: -0.02em; margin-bottom: 12px;
-  }
-
-  .service-desc {
-    font-size: .93rem; color: var(--muted);
-    line-height: 1.72; margin-bottom: 30px;
-  }
-
+ 
+  .service-title { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .service-desc { font-size: .93rem; color: var(--muted); line-height: 1.72; margin-bottom: 30px; }
+ 
   .service-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-
-  .service-features li {
-    display: flex; align-items: flex-start; gap: 10px;
-    font-size: .88rem; color: var(--text); line-height: 1.45;
-  }
-
-  .check-circle {
-    width: 17px; height: 17px; border-radius: 50%; flex-shrink: 0;
-    background: var(--accent-dim); border: 1px solid var(--accent-mid);
-    display: flex; align-items: center; justify-content: center; margin-top: 1px;
-  }
-
+  .service-features li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: var(--text); line-height: 1.45; }
+ 
+  .check-circle { width: 17px; height: 17px; border-radius: 50%; flex-shrink: 0; background: var(--accent-dim); border: 1px solid var(--accent-mid); display: flex; align-items: center; justify-content: center; margin-top: 1px; }
   .check-circle svg { width: 9px; height: 9px; stroke: var(--accent); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-
-  /* ─── HOW ─── */
+ 
   #how { background: var(--bg2); }
-
-  .how-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1px; margin-top: 60px;
-    background: var(--border);
-    border-radius: 20px; overflow: hidden;
-  }
-
+ 
+  .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 60px; background: var(--border); border-radius: 20px; overflow: hidden; }
   @media(max-width:760px){ .how-grid{grid-template-columns:1fr} }
-
-  .how-step {
-    background: var(--bg2); padding: 44px 36px;
-    transition: background .2s;
-  }
-
+ 
+  .how-step { background: var(--bg2); padding: 44px 36px; transition: background .2s; }
   .how-step:hover { background: var(--bg3); }
-
-  .step-num {
-    width: 52px; height: 52px; border-radius: 13px;
-    background: var(--accent-dim); border: 1px solid var(--accent-mid);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Syne', sans-serif;
-    font-size: 1rem; font-weight: 700; color: var(--accent);
-    margin-bottom: 26px;
-  }
-
-  .step-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 10px;
-  }
-
+ 
+  .step-num { width: 52px; height: 52px; border-radius: 13px; background: var(--accent-dim); border: 1px solid var(--accent-mid); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 26px; }
+  .step-title { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
   .step-desc { font-size: .88rem; color: var(--muted); line-height: 1.72; }
-
-  /* ─── PRICING ─── */
+ 
   #pricing { background: var(--bg); }
-
   .pricing-header { margin-bottom: 60px; }
-
-  .pricing-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 24px; max-width: 860px; margin: 0 auto;
-  }
-
+ 
+  .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 860px; margin: 0 auto; }
   @media(max-width:720px){ .pricing-grid{grid-template-columns:1fr} }
-
-  .price-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 24px; padding: 40px 36px;
-    display: flex; flex-direction: column;
-    transition: border-color .3s;
-    position: relative;
-  }
-
-  .price-card.popular {
-    border-color: rgba(62,207,160,.35);
-    background: linear-gradient(160deg, rgba(62,207,160,.065) 0%, var(--bg2) 50%);
-  }
-
-  .popular-badge {
-    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-    padding: 5px 18px;
-    background: var(--accent); color: #08110A;
-    border-radius: 100px;
-    font-size: .73rem; font-weight: 500;
-    white-space: nowrap; letter-spacing: .04em;
-  }
-
+ 
+  .price-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 24px; padding: 40px 36px; display: flex; flex-direction: column; transition: border-color .3s; position: relative; }
+  .price-card.popular { border-color: rgba(62,207,160,.35); background: linear-gradient(160deg, rgba(62,207,160,.065) 0%, var(--bg2) 50%); }
+ 
+  .popular-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 5px 18px; background: var(--accent); color: #08110A; border-radius: 100px; font-size: .73rem; font-weight: 500; white-space: nowrap; letter-spacing: .04em; }
+ 
   .price-type { font-size: .76rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 6px; }
-
-  .price-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.45rem; font-weight: 700; color: #fff; margin-bottom: 22px;
-  }
-
+  .price-name { font-family: 'Syne', sans-serif; font-size: 1.45rem; font-weight: 700; color: #fff; margin-bottom: 22px; }
   .price-main { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
-
-  .price-amount {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.9rem; font-weight: 800;
-    color: #fff; letter-spacing: -0.04em;
-  }
-
+  .price-amount { font-family: 'Syne', sans-serif; font-size: 2.9rem; font-weight: 800; color: #fff; letter-spacing: -0.04em; }
   .price-unit { font-size: .82rem; color: var(--muted); }
-
-  .price-note {
-    font-size: .82rem; color: var(--muted);
-    margin-bottom: 26px; padding-bottom: 26px;
-    border-bottom: 1px solid var(--border);
-    line-height: 1.5;
-  }
-
+  .price-note { font-size: .82rem; color: var(--muted); margin-bottom: 26px; padding-bottom: 26px; border-bottom: 1px solid var(--border); line-height: 1.5; }
   .price-note strong { color: var(--accent); font-weight: 400; }
-
-  .price-features {
-    list-style: none; display: flex; flex-direction: column; gap: 13px;
-    flex: 1; margin-bottom: 30px;
-  }
-
-  .price-features li {
-    display: flex; align-items: flex-start; gap: 10px;
-    font-size: .88rem; color: var(--text); line-height: 1.45;
-  }
-
-  /* ─── STATS ─── */
+ 
+  .price-features { list-style: none; display: flex; flex-direction: column; gap: 13px; flex: 1; margin-bottom: 30px; }
+  .price-features li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: var(--text); line-height: 1.45; }
+ 
   #stats { background: var(--bg2); }
-
-  .stats-inner {
-    border: 1px solid rgba(62,207,160,.18);
-    border-radius: 24px; padding: 64px;
-    background: linear-gradient(135deg, rgba(62,207,160,.045) 0%, transparent 60%);
-    position: relative; overflow: hidden;
-  }
-
-  .stats-glow {
-    position: absolute; top: -80px; right: -80px;
-    width: 380px; height: 380px;
-    background: radial-gradient(ellipse, rgba(62,207,160,.09) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .stats-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 40px; position: relative;
-  }
-
+ 
+  .stats-inner { border: 1px solid rgba(62,207,160,.18); border-radius: 24px; padding: 64px; background: linear-gradient(135deg, rgba(62,207,160,.045) 0%, transparent 60%); position: relative; overflow: hidden; }
+  .stats-glow { position: absolute; top: -80px; right: -80px; width: 380px; height: 380px; background: radial-gradient(ellipse, rgba(62,207,160,.09) 0%, transparent 70%); pointer-events: none; }
+ 
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; position: relative; }
   @media(max-width:900px){ .stats-grid{grid-template-columns:repeat(2,1fr)} .stats-inner{padding:40px} }
-
-  .stat-n {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.7rem; font-weight: 800;
-    color: #fff; letter-spacing: -0.04em;
-    line-height: 1; margin-bottom: 8px;
-  }
-
+ 
+  .stat-n { font-family: 'Syne', sans-serif; font-size: 2.7rem; font-weight: 800; color: #fff; letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; }
   .stat-n .acc { color: var(--accent); }
   .stat-l { font-size: .82rem; color: var(--muted); line-height: 1.55; }
-
-  /* ─── WHY ─── */
+ 
   #why { background: var(--bg); }
-
-  .why-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 18px; margin-top: 60px;
-  }
-
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 60px; }
   @media(max-width:720px){ .why-grid{grid-template-columns:1fr} }
-
-  .why-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 16px; padding: 32px;
-    transition: border-color .25s;
-  }
-
+ 
+  .why-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 32px; transition: border-color .25s; }
   .why-card:hover { border-color: var(--border-strong); }
-
-  .why-icon-wrap {
-    width: 44px; height: 44px; border-radius: 12px;
-    background: var(--accent-dim); border: 1px solid var(--accent-mid);
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 18px;
-  }
-
+ 
+  .why-icon-wrap { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-dim); border: 1px solid var(--accent-mid); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
   .why-icon-wrap svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
-  .why-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 9px;
-  }
-
+ 
+  .why-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 9px; }
   .why-desc { font-size: .88rem; color: var(--muted); line-height: 1.7; }
-
-  /* ─── CTA ─── */
-  #contact { background: var(--bg); text-align: center; }
-
+ 
+  /* ─── CTA / FORM SECTION ─── */
+  #contact { background: var(--bg); }
+ 
   .cta-box {
     background: var(--bg2);
     border: 1px solid rgba(62,207,160,.22);
-    border-radius: 28px; padding: 80px 60px;
+    border-radius: 28px; padding: 64px 60px;
     max-width: 700px; margin: 0 auto;
     position: relative; overflow: hidden;
   }
-
-  .cta-box::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(62,207,160,.11) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  .cta-title {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.7rem);
-    font-weight: 800; color: #fff;
-    letter-spacing: -0.03em; line-height: 1.1;
-    margin-bottom: 14px; position: relative;
-  }
-
-  .cta-sub {
-    font-size: .98rem; color: var(--muted);
-    margin-bottom: 38px; line-height: 1.65; position: relative;
-  }
-
-  .cta-form {
-    display: flex; gap: 12px;
-    max-width: 440px; margin: 0 auto;
-    position: relative; flex-wrap: wrap; justify-content: center;
-  }
-
-  .cta-input {
-    flex: 1; min-width: 210px;
-    padding: 13px 20px;
-    background: rgba(255,255,255,.04);
-    border: 1px solid var(--border-strong);
-    border-radius: 100px; color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: .88rem; outline: none;
-    transition: border-color .2s;
-  }
-
-  .cta-input::placeholder { color: var(--muted); }
-  .cta-input:focus { border-color: rgba(62,207,160,.45); }
-
-  /* ─── FOOTER ─── */
-  footer {
-    background: var(--bg);
-    border-top: 1px solid var(--border);
-    padding: 36px 5%;
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 16px;
-  }
-
+ 
+  .cta-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(62,207,160,.11) 0%, transparent 60%); pointer-events: none; }
+ 
+  .cta-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; color: #fff; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 10px; position: relative; text-align: center; }
+  .cta-sub { font-size: .95rem; color: var(--muted); margin-bottom: 40px; line-height: 1.65; position: relative; text-align: center; }
+ 
+  /* Form styles */
+  .form-step-dots { display: flex; gap: 6px; justify-content: center; margin-bottom: 36px; position: relative; }
+  .form-dot { height: 3px; width: 48px; border-radius: 2px; background: var(--border-strong); transition: background .3s; }
+  .form-dot.active { background: var(--accent); }
+  .form-dot.done { background: rgba(62,207,160,.4); }
+ 
+  .form-step { display: none; animation: fadeUp .25s ease; }
+  .form-step.active { display: block; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+ 
+  .form-q { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 20px; text-align: center; }
+ 
+  .form-opts { display: grid; gap: 10px; }
+  .form-opt { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-strong); border-radius: 12px; cursor: pointer; transition: all .15s; font-size: .92rem; color: var(--text); font-family: 'DM Sans', sans-serif; text-align: left; width: 100%; }
+  .form-opt:hover { border-color: var(--accent-mid); background: var(--accent-dim); }
+  .form-opt.sel { border-color: var(--accent); background: rgba(62,207,160,.12); color: #fff; font-weight: 500; }
+ 
+  .opt-num { font-family: 'Syne', sans-serif; font-size: .82rem; font-weight: 700; color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-mid); border-radius: 8px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+ 
+  .form-field { margin-bottom: 14px; }
+  .form-field label { display: block; font-size: .78rem; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 7px; }
+ 
+  .form-field input { width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-strong); border-radius: 10px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: .92rem; outline: none; transition: border-color .2s; }
+  .form-field input::placeholder { color: var(--muted); }
+  .form-field input:focus { border-color: rgba(62,207,160,.45); }
+ 
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+ 
+  .form-nav { display: flex; gap: 10px; margin-top: 24px; align-items: center; }
+ 
+  .btn-form-back { padding: 13px 20px; background: transparent; color: var(--muted); border: 1px solid var(--border-strong); border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: .88rem; cursor: pointer; transition: background .2s; flex-shrink: 0; }
+  .btn-form-back:hover { background: rgba(255,255,255,.05); }
+ 
+  .btn-form-submit { flex: 1; padding: 14px; background: var(--accent); color: #08110A; border: none; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: .95rem; font-weight: 500; cursor: pointer; transition: opacity .2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .btn-form-submit:hover { opacity: .87; }
+  .btn-form-submit:disabled { opacity: .5; cursor: not-allowed; }
+ 
+  .field-error { font-size: .75rem; color: #FF6B6B; margin-top: 4px; display: none; }
+ 
+  .spinner { width: 16px; height: 16px; border: 2px solid rgba(8,17,10,.3); border-top-color: #08110A; border-radius: 50%; animation: spin .6s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+ 
+  .success-wrap { text-align: center; padding: 20px 0; }
+  .success-check { width: 60px; height: 60px; background: var(--accent-dim); border: 1px solid var(--accent-mid); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 1.4rem; }
+  .success-title { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+  .success-sub { font-size: .93rem; color: var(--muted); line-height: 1.65; margin-bottom: 28px; }
+  .success-recap { background: var(--accent-dim); border: 1px solid var(--accent-mid); border-radius: 14px; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .success-recap-item { }
+  .success-recap-l { font-size: .73rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
+  .success-recap-v { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--accent); }
+ 
+  footer { background: var(--bg); border-top: 1px solid var(--border); padding: 36px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
   .footer-links { display: flex; gap: 28px; list-style: none; }
   .footer-links a { font-size: .8rem; color: var(--muted); text-decoration: none; transition: color .2s; }
   .footer-links a:hover { color: var(--text); }
   .footer-copy { font-size: .78rem; color: var(--muted); }
-
-  /* ─── REVEAL ─── */
+ 
   .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-d1 { transition-delay: .1s; }
@@ -543,27 +258,20 @@
 </style>
 </head>
 <body>
-
-<!-- NAV -->
+ 
 <nav>
   <a href="#" class="logo-wrap">
-    <!-- Reproduction du logo ELIOS : E = 3 barres, LIOS en texte géométrique -->
     <svg class="logo-svg" viewBox="0 0 180 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- E : 3 barres horizontales -->
       <rect x="0" y="4"  width="22" height="5" rx="1.5" fill="#ffffff"/>
       <rect x="0" y="15.5" width="22" height="5" rx="1.5" fill="#3ECFA0"/>
       <rect x="0" y="27" width="22" height="5" rx="1.5" fill="#ffffff"/>
-      <!-- L -->
       <rect x="34" y="4" width="5" height="28" rx="1.5" fill="#ffffff"/>
       <rect x="34" y="27" width="16" height="5" rx="1.5" fill="#ffffff"/>
-      <!-- I -->
       <rect x="62" y="4" width="5" height="28" rx="1.5" fill="#ffffff"/>
-      <!-- O -->
       <rect x="80" y="4" width="5" height="28" rx="2" fill="#ffffff"/>
       <rect x="80" y="4" width="20" height="5" rx="2" fill="#ffffff"/>
       <rect x="95" y="4" width="5" height="28" rx="2" fill="#ffffff"/>
       <rect x="80" y="27" width="20" height="5" rx="2" fill="#ffffff"/>
-      <!-- S -->
       <rect x="115" y="4" width="20" height="5" rx="2" fill="#ffffff"/>
       <rect x="115" y="4" width="5" height="16" rx="2" fill="#ffffff"/>
       <rect x="115" y="15.5" width="20" height="5" rx="2" fill="#ffffff"/>
@@ -578,8 +286,7 @@
     <li><a href="#contact" class="nav-cta">Demander un audit</a></li>
   </ul>
 </nav>
-
-<!-- HERO -->
+ 
 <section id="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
@@ -610,85 +317,45 @@
     </div>
   </div>
 </section>
-
-<!-- SERVICES -->
+ 
 <section id="services" style="background:var(--bg)">
   <div class="services-header reveal">
     <div>
       <div class="section-label">Nos solutions</div>
-      <h2>Conçu pour<br>votre contexte</h2>
+      <h2>Conçu pour<br>vous</h2>
     </div>
     <p class="section-sub">Copropriétés ou entreprises : deux offres adaptées à vos besoins, le même niveau d'exigence.</p>
   </div>
-
   <div class="services-grid">
-    <!-- COPRO -->
     <div class="service-card reveal reveal-d1">
       <div class="card-glow"></div>
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      </div>
+      <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
       <div class="service-title">Copropriétés</div>
       <p class="service-desc">Offrez à vos résidants la recharge à domicile sans aucun investissement côté syndicat. On s'occupe de tout, du premier câble jusqu'à la facture mensuelle de chaque utilisateur.</p>
       <ul class="service-features">
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Installation complète offerte
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Facturation individuelle par résidant, automatique
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Tableau de bord syndic en temps réel
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Maintenance et pannes prises en charge
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Électricité à tarif avantageux vs prix de marché
-        </li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Installation complète offerte</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Facturation individuelle automatique</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Tableau de bord syndic en temps réel</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Maintenance et pannes prises en charge</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Électricité à tarif avantageux</li>
       </ul>
     </div>
-
-    <!-- PME -->
     <div class="service-card featured reveal reveal-d2">
       <div class="card-glow"></div>
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-      </div>
+      <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
       <div class="service-title">PME &amp; Entreprises</div>
-      <p class="service-desc">Rechargez les véhicules de vos collaborateurs et visiteurs sans mobiliser vos équipes. Valorisez vos locaux, affichez votre engagement RSE — le reste, c'est notre métier.</p>
+      <p class="service-desc">Rechargez les véhicules de vos collaborateurs sans mobiliser vos équipes. Valorisez vos locaux et affichez votre engagement RSE — le reste, c'est notre métier.</p>
       <ul class="service-features">
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Installation et câblage 100% offerts
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Bornes AC 22 kW et DC haute puissance
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Accès visiteurs &amp; collaborateurs séparés
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Refacturation employés automatisée
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Rapports RSE &amp; bilan CO₂ mensuels
-        </li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Installation et câblage 100% offerts</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Bornes AC 22 kW — 1 borne par véhicule</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Accès visiteurs &amp; collaborateurs séparés</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Refacturation employés automatisée</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Rapports RSE &amp; bilan CO₂ mensuels</li>
       </ul>
     </div>
   </div>
 </section>
-
-<!-- HOW IT WORKS -->
+ 
 <section id="how">
   <div class="reveal">
     <div class="section-label">Processus</div>
@@ -712,125 +379,59 @@
     </div>
   </div>
 </section>
-
-<!-- PRICING -->
+ 
 <section id="pricing">
   <div class="pricing-header reveal">
     <div class="section-label">Tarification</div>
     <h2>Simple, transparent,<br>sans surprises</h2>
-    <p class="section-sub">Un abonnement fixe mensuel par borne — on gère tout. L'électricité vous est facturée à un tarif compétitif, inférieur aux prix publics habituels.</p>
+    <p class="section-sub">Un abonnement fixe mensuel par borne — on gère tout. L'électricité est facturée directement à vos salariés à un tarif inférieur aux bornes publiques.</p>
   </div>
-
   <div class="pricing-grid">
-    <!-- COPRO PLAN -->
     <div class="price-card reveal reveal-d1">
       <div class="price-type">Copropriété</div>
       <div class="price-name">Résidentiel Collectif</div>
-      <div class="price-main">
-        <div class="price-amount">150€</div>
-        <div class="price-unit">&nbsp;/ borne / mois</div>
-      </div>
-      <div class="price-note">
-        + électricité facturée à <strong>0,38 €/kWh</strong> — tarif avantageux vs prix public
-      </div>
+      <div class="price-main"><div class="price-amount">150€</div><div class="price-unit">&nbsp;/ borne / mois</div></div>
+      <div class="price-note">+ <strong>électricité facturée à vos résidants</strong> — tarif avantageux, inférieur aux bornes publiques</div>
       <ul class="price-features">
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Installation, câblage et raccordement offerts
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Maintenance préventive et curative incluse
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Application résidants &amp; espace syndic
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Facturation individuelle automatisée
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Supervision 24h/24 &amp; support utilisateur
-        </li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Installation, câblage et raccordement offerts</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Maintenance préventive et curative incluse</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Application résidants &amp; espace syndic</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Facturation individuelle automatisée</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Supervision 24h/24 &amp; support utilisateur</li>
       </ul>
       <a href="#contact" class="btn-secondary" style="text-align:center;width:100%;">Demander un audit</a>
     </div>
-
-    <!-- PME PLAN -->
     <div class="price-card popular reveal reveal-d2">
       <div class="popular-badge">Le plus demandé</div>
       <div class="price-type">Entreprise</div>
       <div class="price-name">Pro &amp; PME</div>
-      <div class="price-main">
-        <div class="price-amount">150€</div>
-        <div class="price-unit">&nbsp;/ borne / mois</div>
-      </div>
-      <div class="price-note">
-        + électricité facturée à <strong>0,38 €/kWh</strong> — tarif avantageux vs prix public
-      </div>
+      <div class="price-main"><div class="price-amount">250€</div><div class="price-unit">&nbsp;/ borne / mois</div></div>
+      <div class="price-note">+ <strong>électricité facturée à vos salariés</strong> — tarif avantageux, inférieur aux bornes publiques</div>
       <ul class="price-features">
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Installation, câblage et raccordement offerts
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Bornes AC 22 kW &amp; DC haute puissance
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Maintenance préventive et curative incluse
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Gestion flotte &amp; refacturation employés
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Accès visiteurs &amp; collaborateurs séparés
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Rapports RSE &amp; bilan CO₂ automatisés
-        </li>
-        <li>
-          <div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>
-          Supervision 24h/24 &amp; support dédié
-        </li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>1 borne dédiée par véhicule électrique</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Installation, câblage et raccordement offerts</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Maintenance préventive et curative incluse</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Gestion flotte &amp; refacturation employés</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Supervision 24h/24 &amp; support dédié</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Rapports RSE &amp; bilan CO₂ automatisés</li>
       </ul>
       <a href="#contact" class="btn-primary" style="text-align:center;width:100%;">Obtenir un devis</a>
     </div>
   </div>
 </section>
-
-<!-- STATS -->
+ 
 <section id="stats" style="background:var(--bg2)">
   <div class="stats-inner reveal">
     <div class="stats-glow"></div>
     <div class="stats-grid">
-      <div>
-        <div class="stat-n">0<span class="acc">€</span></div>
-        <div class="stat-l">Investissement demandé à nos clients</div>
-      </div>
-      <div>
-        <div class="stat-n">48<span class="acc">h</span></div>
-        <div class="stat-l">Délai de mise en service après audit validé</div>
-      </div>
-      <div>
-        <div class="stat-n">100<span class="acc">%</span></div>
-        <div class="stat-l">Des pannes et maintenances prises en charge</div>
-      </div>
-      <div>
-        <div class="stat-n">1<span class="acc"> abo</span></div>
-        <div class="stat-l">Unique abonnement, zéro souci opérationnel</div>
-      </div>
+      <div><div class="stat-n">0<span class="acc">€</span></div><div class="stat-l">Investissement demandé à nos clients</div></div>
+      <div><div class="stat-n">48<span class="acc">h</span></div><div class="stat-l">Délai de mise en service après audit validé</div></div>
+      <div><div class="stat-n">100<span class="acc">%</span></div><div class="stat-l">Des pannes et maintenances prises en charge</div></div>
+      <div><div class="stat-n">1<span class="acc"> abo</span></div><div class="stat-l">Unique abonnement, zéro souci opérationnel</div></div>
     </div>
   </div>
 </section>
-
-<!-- WHY ELIOS -->
+ 
 <section id="why">
   <div class="reveal">
     <div class="section-label">Pourquoi Elios</div>
@@ -838,52 +439,125 @@
   </div>
   <div class="why-grid">
     <div class="why-card reveal reveal-d1">
-      <div class="why-icon-wrap">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
+      <div class="why-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
       <div class="why-title">Zéro risque financier</div>
-      <p class="why-desc">Aucun investissement, aucune avance de fonds. Un simple abonnement mensuel suffit pour profiter d'un équipement professionnel complet — sans jamais en assumer les coûts.</p>
+      <p class="why-desc">Aucun investissement, aucune avance de fonds. Un simple abonnement mensuel suffit pour profiter d'un équipement professionnel complet.</p>
     </div>
     <div class="why-card reveal reveal-d2">
-      <div class="why-icon-wrap">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      </div>
+      <div class="why-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
       <div class="why-title">Un abonnement, zéro souci</div>
-      <p class="why-desc">Panne, mise à jour, remplacement matériel, SAV utilisateur — tout est couvert. Vous n'avez aucune décision à prendre ni aucun prestataire à gérer.</p>
+      <p class="why-desc">Panne, mise à jour, remplacement matériel, SAV — tout est couvert. Vous n'avez aucune décision à prendre ni aucun prestataire à gérer.</p>
     </div>
     <div class="why-card reveal reveal-d3">
-      <div class="why-icon-wrap">
-        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      </div>
+      <div class="why-icon-wrap"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
       <div class="why-title">Électricité à prix compétitif</div>
-      <p class="why-desc">Vos utilisateurs rechargent à 0,38 €/kWh — un tarif inférieur à la plupart des réseaux publics de recharge. Un argument concret pour convaincre vos résidants ou collaborateurs.</p>
+      <p class="why-desc">Vos salariés rechargent à 0,38 €/kWh — moins cher que n'importe quelle borne publique. Un argument concret pour convaincre.</p>
     </div>
     <div class="why-card reveal reveal-d4">
-      <div class="why-icon-wrap">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      </div>
+      <div class="why-icon-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
       <div class="why-title">Pilotage en temps réel</div>
-      <p class="why-desc">Un tableau de bord dédié : consommation live, rapports mensuels, alertes, facturation — tout est accessible depuis votre espace, sans avoir à décrocher votre téléphone.</p>
+      <p class="why-desc">Tableau de bord dédié : consommation live, rapports mensuels, alertes, facturation — tout accessible sans décrocher votre téléphone.</p>
     </div>
   </div>
 </section>
-
-<!-- CTA -->
+ 
+<!-- CTA WITH INTEGRATED FORM -->
 <section id="contact">
   <div class="cta-box reveal">
-    <div class="cta-title">On s'occupe<br>de tout. Vraiment.</div>
-    <p class="cta-sub">Audit gratuit sous 48h. Nos experts se déplacent, analysent votre installation et vous proposent un plan personnalisé — sans engagement de votre part.</p>
-    <div class="cta-form">
-      <input class="cta-input" type="email" placeholder="votre@email.fr">
-      <a href="mailto:contact@elios.fr" class="btn-primary">Être contacté</a>
+ 
+    <!-- Step dots -->
+    <div class="form-step-dots">
+      <div class="form-dot active" id="fd1"></div>
+      <div class="form-dot" id="fd2"></div>
+      <div class="form-dot" id="fd3"></div>
+      <div class="form-dot" id="fd4"></div>
     </div>
+ 
+    <!-- STEP 1 -->
+    <div class="form-step active" id="fs1">
+      <div class="cta-title">On s'occupe<br>de tout. Vraiment.</div>
+      <p class="cta-sub">Combien de salariés ont un véhicule électrique dans votre entreprise ?</p>
+      <div class="form-opts">
+        <button class="form-opt" onclick="pick(1,'1 à 3 VE','1-3')"><div class="opt-num">1-3</div>1 à 3 véhicules électriques</button>
+        <button class="form-opt" onclick="pick(1,'4 à 6 VE','4-6')"><div class="opt-num">4-6</div>4 à 6 véhicules électriques</button>
+        <button class="form-opt" onclick="pick(1,'7 à 10 VE','7-10')"><div class="opt-num">7-10</div>7 à 10 véhicules électriques</button>
+        <button class="form-opt" onclick="pick(1,'11 à 20 VE','11-20')"><div class="opt-num">11-20</div>11 à 20 véhicules électriques</button>
+        <button class="form-opt" onclick="pick(1,'Plus de 20 VE','20+')"><div class="opt-num">20+</div>Plus de 20 véhicules électriques</button>
+      </div>
+    </div>
+ 
+    <!-- STEP 2 -->
+    <div class="form-step" id="fs2">
+      <div class="form-q">Votre entreprise dispose d'un parking privatif ?</div>
+      <div class="form-opts">
+        <button class="form-opt" onclick="pick(2,'Parking couvert','couvert')"><div class="opt-num">🏢</div>Oui — parking couvert</button>
+        <button class="form-opt" onclick="pick(2,'Parking extérieur','extérieur')"><div class="opt-num">🚗</div>Oui — parking extérieur</button>
+        <button class="form-opt" onclick="pick(2,'Pas de parking','non')"><div class="opt-num">—</div>Non, pas de parking privatif</button>
+      </div>
+    </div>
+ 
+    <!-- STEP 3 -->
+    <div class="form-step" id="fs3">
+      <div class="form-q">Combien de salariés au total dans votre entreprise ?</div>
+      <div class="form-opts">
+        <button class="form-opt" onclick="pick(3,'Moins de 10','<10')"><div class="opt-num">—</div>Moins de 10 salariés</button>
+        <button class="form-opt" onclick="pick(3,'10 à 50','10-50')"><div class="opt-num">—</div>10 à 50 salariés</button>
+        <button class="form-opt" onclick="pick(3,'50 à 200','50-200')"><div class="opt-num">—</div>50 à 200 salariés</button>
+        <button class="form-opt" onclick="pick(3,'Plus de 200','200+')"><div class="opt-num">—</div>Plus de 200 salariés</button>
+      </div>
+    </div>
+ 
+    <!-- STEP 4 -->
+    <div class="form-step" id="fs4">
+      <div class="form-q">Vos coordonnées — on vous rappelle sous 24h</div>
+      <div class="field-row">
+        <div class="form-field"><label>Prénom</label><input id="f-prenom" type="text" placeholder="Marie"></div>
+        <div class="form-field"><label>Nom</label><input id="f-nom" type="text" placeholder="Dupont"></div>
+      </div>
+      <div class="form-field"><label>Entreprise</label><input id="f-company" type="text" placeholder="Dupont &amp; Associés"></div>
+      <div class="form-field">
+        <label>Email professionnel</label>
+        <input id="f-email" type="email" placeholder="marie@dupont.fr">
+        <div class="field-error" id="err-email">Email invalide</div>
+      </div>
+      <div class="form-field">
+        <label>Téléphone</label>
+        <input id="f-tel" type="tel" placeholder="06 12 34 56 78">
+        <div class="field-error" id="err-tel">Numéro invalide</div>
+      </div>
+      <div class="form-nav">
+        <button class="btn-form-back" onclick="goTo(3)">← Retour</button>
+        <button class="btn-form-submit" id="submitBtn" onclick="submit()">
+          <span id="submitLabel">Être rappelé sous 24h</span>
+        </button>
+      </div>
+    </div>
+ 
+    <!-- SUCCESS -->
+    <div class="form-step" id="fs-ok">
+      <div class="success-wrap">
+        <div class="success-check">✓</div>
+        <div class="success-title">Demande reçue !</div>
+        <p class="success-sub">Un conseiller Elios vous contacte dans les 24h avec votre recommandation personnalisée et un audit gratuit de votre site.</p>
+        <div class="success-recap">
+          <div class="success-recap-item">
+            <div class="success-recap-l">Entreprise</div>
+            <div class="success-recap-v" id="ok-company">—</div>
+          </div>
+          <div class="success-recap-item" style="text-align:right;">
+            <div class="success-recap-l">Véhicules déclarés</div>
+            <div class="success-recap-v" id="ok-ve">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
   </div>
 </section>
-
-<!-- FOOTER -->
+ 
 <footer>
   <a href="#" class="logo-wrap">
-    <svg viewBox="0 0 180 36" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 180 36" height="22" fill="none">
       <rect x="0" y="4"  width="22" height="5" rx="1.5" fill="#ffffff"/>
       <rect x="0" y="15.5" width="22" height="5" rx="1.5" fill="#3ECFA0"/>
       <rect x="0" y="27" width="22" height="5" rx="1.5" fill="#ffffff"/>
@@ -909,12 +583,108 @@
   </ul>
   <div class="footer-copy">© 2025 Elios. Tous droits réservés.</div>
 </footer>
-
+ 
 <script>
+  const SCRIPT_URL = 'REMPLACE_PAR_TON_URL_APPS_SCRIPT';
+  const ans = { ve: '', veLabel: '', parking: '', taille: '' };
+ 
+  function pick(step, label, value) {
+    if (step === 1) { ans.veLabel = label; ans.ve = value; }
+    if (step === 2) {
+      ans.parking = label;
+      if (value === 'non') {
+        document.getElementById('fs2').innerHTML = `
+          <div class="form-q">Pas de parking privatif ?</div>
+          <p style="color:var(--muted);font-size:.9rem;line-height:1.7;text-align:center;margin-bottom:24px;">Notre solution nécessite un espace de stationnement privé. Contactez-nous directement, nous étudierons votre situation ensemble.</p>
+          <a href="mailto:contact@elios.fr" class="btn-form-submit" style="display:flex;text-decoration:none;justify-content:center;">Nous écrire</a>
+          <button class="btn-form-back" onclick="location.reload()" style="margin-top:10px;width:100%;">← Recommencer</button>
+        `;
+        return;
+      }
+    }
+    if (step === 3) { ans.taille = label; }
+ 
+    document.querySelectorAll('#fs' + step + ' .form-opt').forEach(o => o.classList.remove('sel'));
+    event.currentTarget.classList.add('sel');
+    setTimeout(() => goTo(step + 1), 200);
+  }
+ 
+  function goTo(n) {
+    document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+    const target = n === 'ok' ? document.getElementById('fs-ok') : document.getElementById('fs' + n);
+    if (target) target.classList.add('active');
+    updateDots(n);
+  }
+ 
+  function updateDots(current) {
+    const num = parseInt(current);
+    for (let i = 1; i <= 4; i++) {
+      const d = document.getElementById('fd' + i);
+      if (!d) continue;
+      d.classList.remove('active', 'done');
+      if (i < num) d.classList.add('done');
+      else if (i === num) d.classList.add('active');
+    }
+  }
+ 
+  function submit() {
+    const prenom = document.getElementById('f-prenom').value.trim();
+    const nom = document.getElementById('f-nom').value.trim();
+    const company = document.getElementById('f-company').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const tel = document.getElementById('f-tel').value.trim();
+ 
+    document.getElementById('err-email').style.display = 'none';
+    document.getElementById('err-tel').style.display = 'none';
+ 
+    let ok = true;
+    if (!prenom || !nom || !company) { ok = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { document.getElementById('err-email').style.display = 'block'; ok = false; }
+    if (!/^[\d\s\+\-\.]{8,}$/.test(tel)) { document.getElementById('err-tel').style.display = 'block'; ok = false; }
+    if (!ok) return;
+ 
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    document.getElementById('submitLabel').innerHTML = '<div class="spinner"></div>';
+ 
+    const payload = {
+      date: new Date().toLocaleString('fr-FR'),
+      prenom, nom, entreprise: company, email, tel,
+      nb_ve: ans.ve, parking: ans.parking, taille: ans.taille
+    };
+ 
+    fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(() => showOk(company, ans.veLabel))
+      .catch(() => showOk(company, ans.veLabel));
+  }
+ 
+  function showOk(company, ve) {
+    document.getElementById('ok-company').textContent = company;
+    document.getElementById('ok-ve').textContent = ve;
+    document.querySelectorAll('.form-dot').forEach(d => d.classList.add('done'));
+    goTo('ok');
+  }
+ 
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+ 
+  // Scroll to form + pulse animation on CTA clicks
+  document.querySelectorAll('a[href="#contact"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.getElementById('contact');
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const box = target.querySelector('.cta-box');
+        box.style.transition = 'box-shadow 0.3s';
+        box.style.boxShadow = '0 0 0 3px rgba(62,207,160,0.5)';
+        setTimeout(() => { box.style.boxShadow = ''; }, 1000);
+      }, 600);
+    });
+  });
 </script>
+ 
 </body>
 </html>
