@@ -9,367 +9,217 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
- 
   :root {
-    --bg:      #090D13;
-    --bg2:     #0F1520;
-    --bg3:     #16202E;
-    --navy:    #162033;
-    --accent:  #3ECFA0;
-    --accent-dim: rgba(62,207,160,0.10);
-    --accent-mid: rgba(62,207,160,0.30);
-    --text:    #E4EDF5;
-    --muted:   #637188;
-    --border:  rgba(255,255,255,0.07);
-    --border-strong: rgba(255,255,255,0.13);
+    --bg:#090D13; --bg2:#0F1520; --bg3:#16202E; --navy:#162033;
+    --accent:#3ECFA0; --accent-dim:rgba(62,207,160,0.10); --accent-mid:rgba(62,207,160,0.30);
+    --text:#E4EDF5; --muted:#637188; --border:rgba(255,255,255,0.07); --border-strong:rgba(255,255,255,0.13);
   }
- 
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
- 
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 0 5%;
-    height: 68px;
-    display: flex; align-items: center; justify-content: space-between;
-    background: rgba(9,13,19,0.88);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
-  }
- 
-  .logo-wrap { display: flex; align-items: center; text-decoration: none; }
-  .logo-svg { height: 28px; width: auto; }
- 
-  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
-  .nav-links a { font-size: .88rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: .01em; transition: color .2s; }
-  .nav-links a:hover { color: var(--text); }
- 
-  .nav-cta { padding: 9px 22px; background: var(--accent) !important; color: #08110A !important; border-radius: 100px; font-weight: 500 !important; font-size: .85rem !important; transition: opacity .2s !important; }
-  .nav-cta:hover { opacity: .85 !important; }
- 
-  #hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 5% 90px; position: relative; overflow: hidden; }
- 
-  .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(62,207,160,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(62,207,160,.035) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 100%); }
- 
-  .hero-glow { position: absolute; top: -180px; left: 50%; transform: translateX(-50%); width: 760px; height: 520px; background: radial-gradient(ellipse at center, rgba(62,207,160,.13) 0%, transparent 70%); pointer-events: none; }
- 
-  .hero-content { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; text-align: center; }
- 
-  .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; border: 1px solid var(--border-strong); border-radius: 100px; font-size: .77rem; color: var(--muted); letter-spacing: .07em; text-transform: uppercase; margin-bottom: 36px; background: rgba(255,255,255,0.025); }
- 
-  .badge-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: blink 2.2s infinite; }
+  body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 5%; height:68px; display:flex; align-items:center; justify-content:space-between; background:rgba(9,13,19,0.88); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); }
+  .logo-wrap { display:flex; align-items:center; text-decoration:none; }
+  .logo-svg { height:28px; width:auto; }
+  .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
+  .nav-links a { font-size:.88rem; font-weight:400; color:var(--muted); text-decoration:none; letter-spacing:.01em; transition:color .2s; }
+  .nav-links a:hover { color:var(--text); }
+  .nav-cta { padding:9px 22px; background:var(--accent)!important; color:#08110A!important; border-radius:100px; font-weight:500!important; font-size:.85rem!important; transition:opacity .2s!important; }
+  .nav-cta:hover { opacity:.85!important; }
+  #hero { min-height:100vh; display:flex; align-items:center; padding:130px 5% 90px; position:relative; overflow:hidden; }
+  .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(62,207,160,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(62,207,160,.035) 1px,transparent 1px); background-size:64px 64px; mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,black 20%,transparent 100%); }
+  .hero-glow { position:absolute; top:-180px; left:50%; transform:translateX(-50%); width:760px; height:520px; background:radial-gradient(ellipse at center,rgba(62,207,160,.13) 0%,transparent 70%); pointer-events:none; }
+  .hero-content { position:relative; z-index:1; max-width:860px; margin:0 auto; text-align:center; }
+  .hero-badge { display:inline-flex; align-items:center; gap:8px; padding:6px 18px; border:1px solid var(--border-strong); border-radius:100px; font-size:.77rem; color:var(--muted); letter-spacing:.07em; text-transform:uppercase; margin-bottom:36px; background:rgba(255,255,255,0.025); }
+  .badge-dot { width:6px; height:6px; background:var(--accent); border-radius:50%; animation:blink 2.2s infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
- 
-  h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.8rem, 7vw, 5.4rem); line-height: 1.05; letter-spacing: -0.03em; color: #fff; margin-bottom: 24px; }
-  .h1-accent { color: var(--accent); }
- 
-  .hero-sub { font-size: 1.12rem; color: var(--muted); font-weight: 300; line-height: 1.75; max-width: 540px; margin: 0 auto 48px; }
- 
-  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
- 
-  .btn-primary { padding: 14px 32px; background: var(--accent); color: #08110A; border: none; cursor: pointer; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: .95rem; font-weight: 500; text-decoration: none; transition: opacity .2s, transform .15s; display: inline-block; }
-  .btn-primary:hover { opacity: .87; transform: translateY(-1px); }
- 
-  .btn-secondary { padding: 14px 32px; background: transparent; color: var(--text); border: 1px solid var(--border-strong); cursor: pointer; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: .95rem; font-weight: 400; text-decoration: none; transition: background .2s, transform .15s; display: inline-block; }
-  .btn-secondary:hover { background: var(--bg3); transform: translateY(-1px); }
- 
-  .hero-stats { display: flex; justify-content: center; gap: 60px; margin-top: 76px; padding-top: 44px; border-top: 1px solid var(--border); flex-wrap: wrap; }
-  .hero-stat-n { font-family: 'Syne', sans-serif; font-size: 2.1rem; font-weight: 700; color: #fff; letter-spacing: -0.03em; }
-  .hero-stat-n span { color: var(--accent); }
-  .hero-stat-l { font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .09em; margin-top: 5px; }
- 
-  section { padding: 110px 5%; }
- 
-  .section-label { font-size: .74rem; color: var(--accent); text-transform: uppercase; letter-spacing: .14em; font-weight: 500; margin-bottom: 14px; }
- 
-  h2 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.025em; color: #fff; line-height: 1.1; }
- 
-  .section-sub { font-size: 1rem; color: var(--muted); font-weight: 300; line-height: 1.75; max-width: 480px; margin-top: 14px; }
- 
-  .services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: end; margin-bottom: 56px; }
+  h1 { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(2.8rem,7vw,5.4rem); line-height:1.05; letter-spacing:-0.03em; color:#fff; margin-bottom:24px; }
+  .h1-accent { color:var(--accent); }
+  .hero-sub { font-size:1.12rem; color:var(--muted); font-weight:300; line-height:1.75; max-width:540px; margin:0 auto 48px; }
+  .hero-actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .btn-primary { padding:14px 32px; background:var(--accent); color:#08110A; border:none; cursor:pointer; border-radius:100px; font-family:'DM Sans',sans-serif; font-size:.95rem; font-weight:500; text-decoration:none; transition:opacity .2s,transform .15s; display:inline-block; }
+  .btn-primary:hover { opacity:.87; transform:translateY(-1px); }
+  .btn-secondary { padding:14px 32px; background:transparent; color:var(--text); border:1px solid var(--border-strong); cursor:pointer; border-radius:100px; font-family:'DM Sans',sans-serif; font-size:.95rem; font-weight:400; text-decoration:none; transition:background .2s,transform .15s; display:inline-block; }
+  .btn-secondary:hover { background:var(--bg3); transform:translateY(-1px); }
+  .hero-stats { display:flex; justify-content:center; gap:60px; margin-top:76px; padding-top:44px; border-top:1px solid var(--border); flex-wrap:wrap; }
+  .hero-stat-n { font-family:'Syne',sans-serif; font-size:2.1rem; font-weight:700; color:#fff; letter-spacing:-0.03em; }
+  .hero-stat-n span { color:var(--accent); }
+  .hero-stat-l { font-size:.78rem; color:var(--muted); text-transform:uppercase; letter-spacing:.09em; margin-top:5px; }
+  section { padding:110px 5%; }
+  .section-label { font-size:.74rem; color:var(--accent); text-transform:uppercase; letter-spacing:.14em; font-weight:500; margin-bottom:14px; }
+  h2 { font-family:'Syne',sans-serif; font-weight:700; font-size:clamp(2rem,4vw,3rem); letter-spacing:-0.025em; color:#fff; line-height:1.1; }
+  .section-sub { font-size:1rem; color:var(--muted); font-weight:300; line-height:1.75; max-width:480px; margin-top:14px; }
+  .services-header { display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:end; margin-bottom:56px; }
   @media(max-width:720px){ .services-header{grid-template-columns:1fr} }
- 
-  .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .services-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
   @media(max-width:800px){ .services-grid{grid-template-columns:1fr} }
- 
-  .service-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 44px 40px; position: relative; overflow: hidden; transition: border-color .3s, transform .3s; }
-  .service-card:hover { border-color: var(--border-strong); transform: translateY(-4px); }
-  .service-card.featured { border-color: rgba(62,207,160,.25); background: linear-gradient(135deg, rgba(62,207,160,.055) 0%, var(--bg2) 55%); }
-  .service-card.featured:hover { border-color: rgba(62,207,160,.45); }
- 
-  .card-glow { position: absolute; top: 0; right: 0; width: 130px; height: 130px; background: radial-gradient(circle at top right, rgba(62,207,160,.09), transparent 70%); pointer-events: none; }
- 
-  .service-icon { width: 50px; height: 50px; border-radius: 13px; background: var(--accent-dim); border: 1px solid var(--accent-mid); display: flex; align-items: center; justify-content: center; margin-bottom: 26px; }
-  .service-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
- 
-  .service-title { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; letter-spacing: -0.02em; margin-bottom: 12px; }
-  .service-desc { font-size: .93rem; color: var(--muted); line-height: 1.72; margin-bottom: 30px; }
- 
-  .service-features { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .service-features li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: var(--text); line-height: 1.45; }
- 
-  .check-circle { width: 17px; height: 17px; border-radius: 50%; flex-shrink: 0; background: var(--accent-dim); border: 1px solid var(--accent-mid); display: flex; align-items: center; justify-content: center; margin-top: 1px; }
-  .check-circle svg { width: 9px; height: 9px; stroke: var(--accent); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
- 
-  #how { background: var(--bg2); }
- 
-  .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 60px; background: var(--border); border-radius: 20px; overflow: hidden; }
+  .service-card { background:var(--bg2); border:1px solid var(--border); border-radius:20px; padding:44px 40px; position:relative; overflow:hidden; transition:border-color .3s,transform .3s; }
+  .service-card:hover { border-color:var(--border-strong); transform:translateY(-4px); }
+  .service-card.featured { border-color:rgba(62,207,160,.25); background:linear-gradient(135deg,rgba(62,207,160,.055) 0%,var(--bg2) 55%); }
+  .service-card.featured:hover { border-color:rgba(62,207,160,.45); }
+  .card-glow { position:absolute; top:0; right:0; width:130px; height:130px; background:radial-gradient(circle at top right,rgba(62,207,160,.09),transparent 70%); pointer-events:none; }
+  .service-icon { width:50px; height:50px; border-radius:13px; background:var(--accent-dim); border:1px solid var(--accent-mid); display:flex; align-items:center; justify-content:center; margin-bottom:26px; }
+  .service-icon svg { width:22px; height:22px; stroke:var(--accent); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .service-title { font-family:'Syne',sans-serif; font-size:1.4rem; font-weight:700; color:#fff; letter-spacing:-0.02em; margin-bottom:12px; }
+  .service-desc { font-size:.93rem; color:var(--muted); line-height:1.72; margin-bottom:30px; }
+  .service-features { list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .service-features li { display:flex; align-items:flex-start; gap:10px; font-size:.88rem; color:var(--text); line-height:1.45; }
+  .check-circle { width:17px; height:17px; border-radius:50%; flex-shrink:0; background:var(--accent-dim); border:1px solid var(--accent-mid); display:flex; align-items:center; justify-content:center; margin-top:1px; }
+  .check-circle svg { width:9px; height:9px; stroke:var(--accent); fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
+  #how { background:var(--bg2); }
+  .how-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:60px; background:var(--border); border-radius:20px; overflow:hidden; }
   @media(max-width:760px){ .how-grid{grid-template-columns:1fr} }
- 
-  .how-step { background: var(--bg2); padding: 44px 36px; transition: background .2s; }
-  .how-step:hover { background: var(--bg3); }
- 
-  .step-num { width: 52px; height: 52px; border-radius: 13px; background: var(--accent-dim); border: 1px solid var(--accent-mid); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 26px; }
-  .step-title { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-  .step-desc { font-size: .88rem; color: var(--muted); line-height: 1.72; }
- 
-  #pricing { background: var(--bg); }
-  .pricing-header { margin-bottom: 60px; }
- 
-  .pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 860px; margin: 0 auto; }
+  .how-step { background:var(--bg2); padding:44px 36px; transition:background .2s; }
+  .how-step:hover { background:var(--bg3); }
+  .step-num { width:52px; height:52px; border-radius:13px; background:var(--accent-dim); border:1px solid var(--accent-mid); display:flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; color:var(--accent); margin-bottom:26px; }
+  .step-title { font-family:'Syne',sans-serif; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:10px; }
+  .step-desc { font-size:.88rem; color:var(--muted); line-height:1.72; }
+  #pricing { background:var(--bg); }
+  .pricing-header { margin-bottom:56px; }
+
+  /* ── PRICING MODEL TAG ── */
+  .pricing-model-tag {
+    display:inline-flex; align-items:center; gap:10px;
+    padding:10px 20px; margin-top:28px;
+    background:rgba(62,207,160,0.07); border:1px solid rgba(62,207,160,0.22);
+    border-radius:12px; max-width:100%;
+  }
+  .pmt-icon { width:28px; height:28px; border-radius:8px; background:var(--accent-dim); border:1px solid var(--accent-mid); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .pmt-icon svg { width:13px; height:13px; stroke:var(--accent); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .pmt-text { font-size:.83rem; color:var(--muted); line-height:1.5; }
+  .pmt-text strong { color:var(--text); font-weight:500; }
+
+  .pricing-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; max-width:860px; margin:0 auto; }
   @media(max-width:720px){ .pricing-grid{grid-template-columns:1fr} }
- 
-  .price-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 24px; padding: 40px 36px; display: flex; flex-direction: column; transition: border-color .3s; position: relative; }
-  .price-card.popular { border-color: rgba(62,207,160,.35); background: linear-gradient(160deg, rgba(62,207,160,.065) 0%, var(--bg2) 50%); }
- 
-  .popular-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 5px 18px; background: var(--accent); color: #08110A; border-radius: 100px; font-size: .73rem; font-weight: 500; white-space: nowrap; letter-spacing: .04em; }
- 
-  .price-type { font-size: .76rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); margin-bottom: 6px; }
-  .price-name { font-family: 'Syne', sans-serif; font-size: 1.45rem; font-weight: 700; color: #fff; margin-bottom: 22px; }
-  .price-main { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
-  .price-amount { font-family: 'Syne', sans-serif; font-size: 2.9rem; font-weight: 800; color: #fff; letter-spacing: -0.04em; }
-  .price-unit { font-size: .82rem; color: var(--muted); }
-  .price-note { font-size: .82rem; color: var(--muted); margin-bottom: 26px; padding-bottom: 26px; border-bottom: 1px solid var(--border); line-height: 1.5; }
-  .price-note strong { color: var(--accent); font-weight: 400; }
- 
-  .price-features { list-style: none; display: flex; flex-direction: column; gap: 13px; flex: 1; margin-bottom: 30px; }
-  .price-features li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: var(--text); line-height: 1.45; }
- 
-  #stats { background: var(--bg2); }
- 
-  .stats-inner { border: 1px solid rgba(62,207,160,.18); border-radius: 24px; padding: 64px; background: linear-gradient(135deg, rgba(62,207,160,.045) 0%, transparent 60%); position: relative; overflow: hidden; }
-  .stats-glow { position: absolute; top: -80px; right: -80px; width: 380px; height: 380px; background: radial-gradient(ellipse, rgba(62,207,160,.09) 0%, transparent 70%); pointer-events: none; }
- 
-  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; position: relative; }
+  .price-card { background:var(--bg2); border:1px solid var(--border); border-radius:24px; padding:40px 36px; display:flex; flex-direction:column; transition:border-color .3s; position:relative; }
+  .price-card.popular { border-color:rgba(62,207,160,.35); background:linear-gradient(160deg,rgba(62,207,160,.065) 0%,var(--bg2) 50%); }
+  .popular-badge { position:absolute; top:-13px; left:50%; transform:translateX(-50%); padding:5px 18px; background:var(--accent); color:#08110A; border-radius:100px; font-size:.73rem; font-weight:500; white-space:nowrap; letter-spacing:.04em; }
+  .price-type { font-size:.76rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:6px; }
+  .price-name { font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:700; color:#fff; margin-bottom:22px; }
+
+  /* ── À PARTIR DE ── */
+  .price-from { font-size:.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; margin-bottom:2px; }
+  .price-main { display:flex; align-items:baseline; gap:4px; margin-bottom:4px; }
+  .price-amount { font-family:'Syne',sans-serif; font-size:2.9rem; font-weight:800; color:#fff; letter-spacing:-0.04em; }
+  .price-unit { font-size:.82rem; color:var(--muted); }
+
+  .price-note { font-size:.82rem; color:var(--muted); margin-bottom:26px; padding-bottom:26px; border-bottom:1px solid var(--border); line-height:1.6; }
+  .price-note strong { color:var(--accent); font-weight:400; }
+
+  /* ── USAGE PILL ── */
+  .usage-pill { display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:rgba(62,207,160,0.08); border:1px solid rgba(62,207,160,0.18); border-radius:100px; font-size:.73rem; color:var(--accent); margin-bottom:20px; letter-spacing:.03em; }
+
+  .price-features { list-style:none; display:flex; flex-direction:column; gap:13px; flex:1; margin-bottom:30px; }
+  .price-features li { display:flex; align-items:flex-start; gap:10px; font-size:.88rem; color:var(--text); line-height:1.45; }
+  #stats { background:var(--bg2); }
+  .stats-inner { border:1px solid rgba(62,207,160,.18); border-radius:24px; padding:64px; background:linear-gradient(135deg,rgba(62,207,160,.045) 0%,transparent 60%); position:relative; overflow:hidden; }
+  .stats-glow { position:absolute; top:-80px; right:-80px; width:380px; height:380px; background:radial-gradient(ellipse,rgba(62,207,160,.09) 0%,transparent 70%); pointer-events:none; }
+  .stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:40px; position:relative; }
   @media(max-width:900px){ .stats-grid{grid-template-columns:repeat(2,1fr)} .stats-inner{padding:40px} }
- 
-  .stat-n { font-family: 'Syne', sans-serif; font-size: 2.7rem; font-weight: 800; color: #fff; letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; }
-  .stat-n .acc { color: var(--accent); }
-  .stat-l { font-size: .82rem; color: var(--muted); line-height: 1.55; }
- 
-  #why { background: var(--bg); }
-  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 60px; }
+  .stat-n { font-family:'Syne',sans-serif; font-size:2.7rem; font-weight:800; color:#fff; letter-spacing:-0.04em; line-height:1; margin-bottom:8px; }
+  .stat-n .acc { color:var(--accent); }
+  .stat-l { font-size:.82rem; color:var(--muted); line-height:1.55; }
+  #why { background:var(--bg); }
+  .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:60px; }
   @media(max-width:720px){ .why-grid{grid-template-columns:1fr} }
- 
-  .why-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 32px; transition: border-color .25s; }
-  .why-card:hover { border-color: var(--border-strong); }
- 
-  .why-icon-wrap { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-dim); border: 1px solid var(--accent-mid); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
-  .why-icon-wrap svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
- 
-  .why-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 9px; }
-  .why-desc { font-size: .88rem; color: var(--muted); line-height: 1.7; }
- 
-  /* ─── CTA / FORM SECTION ─── */
-  #contact { background: var(--bg); }
- 
-  .cta-box {
-    background: var(--bg2);
-    border: 1px solid rgba(62,207,160,.22);
-    border-radius: 28px; padding: 64px 60px;
-    max-width: 700px; margin: 0 auto;
-    position: relative; overflow: hidden;
+  .why-card { background:var(--bg2); border:1px solid var(--border); border-radius:16px; padding:32px; transition:border-color .25s; }
+  .why-card:hover { border-color:var(--border-strong); }
+  .why-icon-wrap { width:44px; height:44px; border-radius:12px; background:var(--accent-dim); border:1px solid var(--accent-mid); display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+  .why-icon-wrap svg { width:20px; height:20px; stroke:var(--accent); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .why-title { font-family:'Syne',sans-serif; font-size:1.05rem; font-weight:700; color:#fff; margin-bottom:9px; }
+  .why-desc { font-size:.88rem; color:var(--muted); line-height:1.7; }
+  #contact { background:var(--bg); }
+  .cta-box { background:var(--bg2); border:1px solid rgba(62,207,160,.22); border-radius:28px; padding:64px 60px; max-width:700px; margin:0 auto; position:relative; overflow:hidden; }
+  .cta-box::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 0%,rgba(62,207,160,.11) 0%,transparent 60%); pointer-events:none; }
+  .cta-title { font-family:'Syne',sans-serif; font-size:clamp(1.8rem,4vw,2.5rem); font-weight:800; color:#fff; letter-spacing:-0.03em; line-height:1.1; margin-bottom:10px; position:relative; text-align:center; }
+  .cta-sub { font-size:.95rem; color:var(--muted); margin-bottom:40px; line-height:1.65; position:relative; text-align:center; }
+  .form-step-dots { display:flex; gap:6px; justify-content:center; margin-bottom:36px; position:relative; }
+  .form-dot { height:3px; width:48px; border-radius:2px; background:var(--border-strong); transition:background .3s; }
+  .form-dot.active { background:var(--accent); }
+  .form-dot.done { background:rgba(62,207,160,.4); }
+  .form-step { display:none; animation:fadeUp .25s ease; }
+  .form-step.active { display:block; }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+  .form-q { font-family:'Syne',sans-serif; font-size:1.15rem; font-weight:700; color:#fff; margin-bottom:20px; text-align:center; }
+  .form-opts { display:grid; gap:10px; }
+  .form-opt { display:flex; align-items:center; gap:14px; padding:14px 18px; background:rgba(255,255,255,0.03); border:1px solid var(--border-strong); border-radius:12px; cursor:pointer; transition:all .15s; font-size:.92rem; color:var(--text); font-family:'DM Sans',sans-serif; text-align:left; width:100%; }
+  .form-opt:hover { border-color:var(--accent-mid); background:var(--accent-dim); }
+  .form-opt.sel { border-color:var(--accent); background:rgba(62,207,160,.12); color:#fff; font-weight:500; }
+  .opt-num { font-family:'Syne',sans-serif; font-size:.82rem; font-weight:700; color:var(--accent); background:var(--accent-dim); border:1px solid var(--accent-mid); border-radius:8px; width:32px; height:32px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .form-field { margin-bottom:14px; }
+  .form-field label { display:block; font-size:.78rem; font-weight:500; color:var(--muted); text-transform:uppercase; letter-spacing:.07em; margin-bottom:7px; }
+  .form-field input { width:100%; padding:12px 16px; background:rgba(255,255,255,0.04); border:1px solid var(--border-strong); border-radius:10px; color:var(--text); font-family:'DM Sans',sans-serif; font-size:.92rem; outline:none; transition:border-color .2s; }
+  .form-field input::placeholder { color:var(--muted); }
+  .form-field input:focus { border-color:rgba(62,207,160,.45); }
+  .field-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .form-nav { display:flex; gap:10px; margin-top:24px; align-items:center; }
+  .btn-form-back { padding:13px 20px; background:transparent; color:var(--muted); border:1px solid var(--border-strong); border-radius:100px; font-family:'DM Sans',sans-serif; font-size:.88rem; cursor:pointer; transition:background .2s; flex-shrink:0; }
+  .btn-form-back:hover { background:rgba(255,255,255,.05); }
+  .btn-form-submit { flex:1; padding:14px; background:var(--accent); color:#08110A; border:none; border-radius:100px; font-family:'DM Sans',sans-serif; font-size:.95rem; font-weight:500; cursor:pointer; transition:opacity .2s; display:flex; align-items:center; justify-content:center; gap:8px; }
+  .btn-form-submit:hover { opacity:.87; }
+  .btn-form-submit:disabled { opacity:.5; cursor:not-allowed; }
+  .field-error { font-size:.75rem; color:#FF6B6B; margin-top:4px; display:none; }
+  .spinner { width:16px; height:16px; border:2px solid rgba(8,17,10,.3); border-top-color:#08110A; border-radius:50%; animation:spin .6s linear infinite; }
+  @keyframes spin { to{transform:rotate(360deg)} }
+  .success-wrap { text-align:center; padding:20px 0; }
+  .success-check { width:60px; height:60px; background:var(--accent-dim); border:1px solid var(--accent-mid); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 24px; font-size:1.4rem; }
+  .success-title { font-family:'Syne',sans-serif; font-size:1.6rem; font-weight:700; color:#fff; margin-bottom:10px; }
+  .success-sub { font-size:.93rem; color:var(--muted); line-height:1.65; margin-bottom:28px; }
+  .success-recap { background:var(--accent-dim); border:1px solid var(--accent-mid); border-radius:14px; padding:18px 24px; display:flex; justify-content:space-between; align-items:center; }
+  .success-recap-l { font-size:.73rem; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin-bottom:4px; }
+  .success-recap-v { font-family:'Syne',sans-serif; font-size:1.05rem; font-weight:700; color:var(--accent); }
+  footer { background:var(--bg); border-top:1px solid var(--border); padding:36px 5%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+  .footer-links { display:flex; gap:28px; list-style:none; }
+  .footer-links a { font-size:.8rem; color:var(--muted); text-decoration:none; transition:color .2s; }
+  .footer-links a:hover { color:var(--text); }
+  .footer-copy { font-size:.78rem; color:var(--muted); }
+  .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease,transform .7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  .reveal-d1{transition-delay:.1s} .reveal-d2{transition-delay:.2s} .reveal-d3{transition-delay:.3s} .reveal-d4{transition-delay:.4s}
+  .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+  .hamburger span { display:block; width:22px; height:2px; background:var(--text); border-radius:2px; transition:all .25s; }
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mobile-menu { display:none; position:fixed; top:68px; left:0; right:0; background:rgba(9,13,19,0.97); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); padding:20px 5% 24px; z-index:99; flex-direction:column; gap:0; }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a { padding:14px 0; font-size:1rem; color:var(--muted); text-decoration:none; border-bottom:1px solid var(--border); transition:color .2s; }
+  .mobile-menu a:hover { color:var(--text); }
+  .mobile-menu .nav-cta { margin-top:16px; text-align:center; padding:13px; background:var(--accent)!important; color:#08110A!important; border-radius:100px; font-weight:500!important; border:none; }
+  @media(max-width:768px){
+    .nav-links{display:none} .hamburger{display:flex}
+    section{padding:72px 5%} #hero{padding:100px 5% 64px}
+    .hero-stats{gap:28px;padding-top:32px;margin-top:48px} .hero-stat-n{font-size:1.7rem} .hero-stat-l{font-size:.72rem}
+    .service-card{padding:32px 24px} .how-step{padding:32px 24px} .why-card{padding:24px}
+    .cta-box{padding:44px 28px} .cta-title{font-size:1.9rem}
+    .price-card{padding:32px 24px} .price-amount{font-size:2.4rem}
+    .stats-inner{padding:40px 28px}
+    footer{flex-direction:column;gap:20px;text-align:center} .footer-links{flex-wrap:wrap;justify-content:center;gap:16px}
+    .field-row{grid-template-columns:1fr;gap:0} .form-opts{gap:8px} .services-header{margin-bottom:36px}
   }
- 
-  .cta-box::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(62,207,160,.11) 0%, transparent 60%); pointer-events: none; }
- 
-  .cta-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; color: #fff; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 10px; position: relative; text-align: center; }
-  .cta-sub { font-size: .95rem; color: var(--muted); margin-bottom: 40px; line-height: 1.65; position: relative; text-align: center; }
- 
-  /* Form styles */
-  .form-step-dots { display: flex; gap: 6px; justify-content: center; margin-bottom: 36px; position: relative; }
-  .form-dot { height: 3px; width: 48px; border-radius: 2px; background: var(--border-strong); transition: background .3s; }
-  .form-dot.active { background: var(--accent); }
-  .form-dot.done { background: rgba(62,207,160,.4); }
- 
-  .form-step { display: none; animation: fadeUp .25s ease; }
-  .form-step.active { display: block; }
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
- 
-  .form-q { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 20px; text-align: center; }
- 
-  .form-opts { display: grid; gap: 10px; }
-  .form-opt { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-strong); border-radius: 12px; cursor: pointer; transition: all .15s; font-size: .92rem; color: var(--text); font-family: 'DM Sans', sans-serif; text-align: left; width: 100%; }
-  .form-opt:hover { border-color: var(--accent-mid); background: var(--accent-dim); }
-  .form-opt.sel { border-color: var(--accent); background: rgba(62,207,160,.12); color: #fff; font-weight: 500; }
- 
-  .opt-num { font-family: 'Syne', sans-serif; font-size: .82rem; font-weight: 700; color: var(--accent); background: var(--accent-dim); border: 1px solid var(--accent-mid); border-radius: 8px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
- 
-  .form-field { margin-bottom: 14px; }
-  .form-field label { display: block; font-size: .78rem; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 7px; }
- 
-  .form-field input { width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-strong); border-radius: 10px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: .92rem; outline: none; transition: border-color .2s; }
-  .form-field input::placeholder { color: var(--muted); }
-  .form-field input:focus { border-color: rgba(62,207,160,.45); }
- 
-  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
- 
-  .form-nav { display: flex; gap: 10px; margin-top: 24px; align-items: center; }
- 
-  .btn-form-back { padding: 13px 20px; background: transparent; color: var(--muted); border: 1px solid var(--border-strong); border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: .88rem; cursor: pointer; transition: background .2s; flex-shrink: 0; }
-  .btn-form-back:hover { background: rgba(255,255,255,.05); }
- 
-  .btn-form-submit { flex: 1; padding: 14px; background: var(--accent); color: #08110A; border: none; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: .95rem; font-weight: 500; cursor: pointer; transition: opacity .2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
-  .btn-form-submit:hover { opacity: .87; }
-  .btn-form-submit:disabled { opacity: .5; cursor: not-allowed; }
- 
-  .field-error { font-size: .75rem; color: #FF6B6B; margin-top: 4px; display: none; }
- 
-  .spinner { width: 16px; height: 16px; border: 2px solid rgba(8,17,10,.3); border-top-color: #08110A; border-radius: 50%; animation: spin .6s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
- 
-  .success-wrap { text-align: center; padding: 20px 0; }
-  .success-check { width: 60px; height: 60px; background: var(--accent-dim); border: 1px solid var(--accent-mid); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 1.4rem; }
-  .success-title { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-  .success-sub { font-size: .93rem; color: var(--muted); line-height: 1.65; margin-bottom: 28px; }
-  .success-recap { background: var(--accent-dim); border: 1px solid var(--accent-mid); border-radius: 14px; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; }
-  .success-recap-item { }
-  .success-recap-l { font-size: .73rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
-  .success-recap-v { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--accent); }
- 
-  footer { background: var(--bg); border-top: 1px solid var(--border); padding: 36px 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-  .footer-links { display: flex; gap: 28px; list-style: none; }
-  .footer-links a { font-size: .8rem; color: var(--muted); text-decoration: none; transition: color .2s; }
-  .footer-links a:hover { color: var(--text); }
-  .footer-copy { font-size: .78rem; color: var(--muted); }
- 
-  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-  .reveal-d1 { transition-delay: .1s; }
-  .reveal-d2 { transition-delay: .2s; }
-  .reveal-d3 { transition-delay: .3s; }
-  .reveal-d4 { transition-delay: .4s; }
- 
-  /* ─── HAMBURGER ─── */
-  .hamburger {
-    display: none; flex-direction: column; gap: 5px;
-    cursor: pointer; padding: 4px; background: none; border: none;
-  }
-  .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all .25s; }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
- 
-  .mobile-menu {
-    display: none; position: fixed; top: 68px; left: 0; right: 0;
-    background: rgba(9,13,19,0.97); backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
-    padding: 20px 5% 24px; z-index: 99;
-    flex-direction: column; gap: 0;
-  }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a {
-    padding: 14px 0; font-size: 1rem; color: var(--muted);
-    text-decoration: none; border-bottom: 1px solid var(--border);
-    transition: color .2s;
-  }
-  .mobile-menu a:hover { color: var(--text); }
-  .mobile-menu .nav-cta {
-    margin-top: 16px; text-align: center; padding: 13px;
-    background: var(--accent) !important; color: #08110A !important;
-    border-radius: 100px; font-weight: 500 !important; border: none;
-  }
- 
-  /* ─── TABLET 768px ─── */
-  @media(max-width: 768px) {
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
- 
-    section { padding: 72px 5%; }
-    #hero { padding: 100px 5% 64px; }
- 
-    .hero-stats { gap: 28px; padding-top: 32px; margin-top: 48px; }
-    .hero-stat-n { font-size: 1.7rem; }
-    .hero-stat-l { font-size: .72rem; }
- 
-    .service-card { padding: 32px 24px; }
-    .how-step { padding: 32px 24px; }
-    .why-card { padding: 24px; }
- 
-    .cta-box { padding: 44px 28px; }
-    .cta-title { font-size: 1.9rem; }
- 
-    .price-card { padding: 32px 24px; }
-    .price-amount { font-size: 2.4rem; }
- 
-    .stats-inner { padding: 40px 28px; }
- 
-    footer { flex-direction: column; gap: 20px; text-align: center; }
-    .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
- 
-    .field-row { grid-template-columns: 1fr; gap: 0; }
-    .form-opts { gap: 8px; }
- 
-    .services-header { margin-bottom: 36px; }
-  }
- 
-  /* ─── MOBILE 480px ─── */
-  @media(max-width: 480px) {
-    #hero { padding: 90px 5% 52px; }
- 
-    .hero-actions { flex-direction: column; align-items: stretch; }
-    .btn-primary, .btn-secondary { text-align: center; padding: 15px 24px; }
- 
-    .hero-stats { flex-direction: column; gap: 20px; align-items: flex-start; padding-left: 4px; }
-    .hero-stat-n { font-size: 1.5rem; }
- 
-    h2 { font-size: 1.75rem; }
- 
-    .service-card { padding: 28px 20px; }
-    .service-title { font-size: 1.2rem; }
- 
-    .how-step { padding: 28px 20px; }
- 
-    .price-card { padding: 28px 20px; }
-    .price-amount { font-size: 2.1rem; }
- 
-    .stats-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
-    .stat-n { font-size: 2rem; }
- 
-    .why-card { padding: 20px; }
- 
-    .cta-box { padding: 36px 20px; border-radius: 20px; }
-    .cta-title { font-size: 1.6rem; }
-    .cta-sub { font-size: .88rem; }
- 
-    .form-step-dots { gap: 4px; margin-bottom: 28px; }
-    .form-dot { width: 36px; }
-    .form-q { font-size: 1rem; }
-    .form-opt { padding: 12px 14px; font-size: .88rem; }
-    .opt-num { width: 28px; height: 28px; font-size: .75rem; }
- 
-    .form-nav { flex-direction: column-reverse; gap: 8px; }
-    .btn-form-back { width: 100%; text-align: center; }
- 
-    .success-recap { flex-direction: column; gap: 14px; text-align: center; }
- 
-    footer { padding: 28px 5%; }
-    .footer-links { gap: 12px; }
+  @media(max-width:480px){
+    #hero{padding:90px 5% 52px}
+    .hero-actions{flex-direction:column;align-items:stretch} .btn-primary,.btn-secondary{text-align:center;padding:15px 24px}
+    .hero-stats{flex-direction:column;gap:20px;align-items:flex-start;padding-left:4px} .hero-stat-n{font-size:1.5rem}
+    h2{font-size:1.75rem}
+    .service-card{padding:28px 20px} .service-title{font-size:1.2rem}
+    .how-step{padding:28px 20px}
+    .price-card{padding:28px 20px} .price-amount{font-size:2.1rem}
+    .stats-grid{grid-template-columns:1fr 1fr;gap:28px} .stat-n{font-size:2rem}
+    .why-card{padding:20px}
+    .cta-box{padding:36px 20px;border-radius:20px} .cta-title{font-size:1.6rem} .cta-sub{font-size:.88rem}
+    .form-step-dots{gap:4px;margin-bottom:28px} .form-dot{width:36px} .form-q{font-size:1rem}
+    .form-opt{padding:12px 14px;font-size:.88rem} .opt-num{width:28px;height:28px;font-size:.75rem}
+    .form-nav{flex-direction:column-reverse;gap:8px} .btn-form-back{width:100%;text-align:center}
+    .success-recap{flex-direction:column;gap:14px;text-align:center}
+    footer{padding:28px 5%} .footer-links{gap:12px}
   }
 </style>
 </head>
 <body>
- 
+
 <nav>
   <a href="#" class="logo-wrap">
-    <svg class="logo-svg" viewBox="0 0 180 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="4"  width="22" height="5" rx="1.5" fill="#ffffff"/>
+    <svg class="logo-svg" viewBox="0 0 180 36" fill="none">
+      <rect x="0" y="4" width="22" height="5" rx="1.5" fill="#ffffff"/>
       <rect x="0" y="15.5" width="22" height="5" rx="1.5" fill="#3ECFA0"/>
       <rect x="0" y="27" width="22" height="5" rx="1.5" fill="#ffffff"/>
       <rect x="34" y="4" width="5" height="28" rx="1.5" fill="#ffffff"/>
@@ -392,26 +242,22 @@
     <li><a href="#pricing">Tarifs</a></li>
     <li><a href="#contact" class="nav-cta">Demander un audit</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
- 
+
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" class="mobile-link">Services</a>
   <a href="#how" class="mobile-link">Fonctionnement</a>
   <a href="#pricing" class="mobile-link">Tarifs</a>
   <a href="#contact" class="nav-cta mobile-link">Demander un audit →</a>
 </div>
- 
+
+<!-- HERO -->
 <section id="hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-content">
-    <div class="hero-badge">
-      <span class="badge-dot"></span>
-      La recharge électrique, sans les complications
-    </div>
+    <div class="hero-badge"><span class="badge-dot"></span>La recharge électrique, sans les complications</div>
     <h1>Nous l'installons.<br><span class="h1-accent">Vous en profitez.<br>C'est tout.</span></h1>
     <p class="hero-sub">Elios prend en charge l'installation complète de vos bornes de recharge et gère tout à votre place — maintenance, supervision, facturation. Zéro investissement de votre côté.</p>
     <div class="hero-actions">
@@ -419,22 +265,14 @@
       <a href="#how" class="btn-secondary">Comment ça marche →</a>
     </div>
     <div class="hero-stats">
-      <div>
-        <div class="hero-stat-n">0<span>€</span></div>
-        <div class="hero-stat-l">D'investissement requis</div>
-      </div>
-      <div>
-        <div class="hero-stat-n">48<span>h</span></div>
-        <div class="hero-stat-l">Pour être opérationnel</div>
-      </div>
-      <div>
-        <div class="hero-stat-n">24<span>/7</span></div>
-        <div class="hero-stat-l">Supervision incluse</div>
-      </div>
+      <div><div class="hero-stat-n">0<span>€</span></div><div class="hero-stat-l">D'investissement requis</div></div>
+      <div><div class="hero-stat-n">48<span>h</span></div><div class="hero-stat-l">Pour être opérationnel</div></div>
+      <div><div class="hero-stat-n">24<span>/7</span></div><div class="hero-stat-l">Supervision incluse</div></div>
     </div>
   </div>
 </section>
- 
+
+<!-- SERVICES -->
 <section id="services" style="background:var(--bg)">
   <div class="services-header reveal">
     <div>
@@ -444,6 +282,8 @@
     <p class="section-sub">Copropriétés ou entreprises : deux offres adaptées à vos besoins, le même niveau d'exigence.</p>
   </div>
   <div class="services-grid">
+
+    <!-- COPRO -->
     <div class="service-card reveal reveal-d1">
       <div class="card-glow"></div>
       <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
@@ -451,28 +291,33 @@
       <p class="service-desc">Offrez à vos résidants la recharge à domicile sans aucun investissement côté syndicat. On s'occupe de tout, du premier câble jusqu'à la facture mensuelle de chaque utilisateur.</p>
       <ul class="service-features">
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Installation complète offerte</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Dimensionnement adapté à la résidence</li>
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Facturation individuelle automatique</li>
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Tableau de bord syndic en temps réel</li>
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Maintenance et pannes prises en charge</li>
-        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Électricité à tarif avantageux</li>
       </ul>
     </div>
+
+    <!-- PME -->
     <div class="service-card featured reveal reveal-d2">
       <div class="card-glow"></div>
       <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-      <div class="service-title">PME &amp; Entreprises</div>
+      <div class="service-title">Entreprises</div>
       <p class="service-desc">Rechargez les véhicules de vos collaborateurs sans mobiliser vos équipes. Valorisez vos locaux et affichez votre engagement RSE — le reste, c'est notre métier.</p>
       <ul class="service-features">
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Installation et câblage 100% offerts</li>
-        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Bornes AC 22 kW — 1 borne par véhicule</li>
-        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Accès visiteurs &amp; collaborateurs séparés</li>
-        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Refacturation employés automatisée</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Dimensionnement sur mesure selon votre parc de véhicules</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Maintenance préventive et curative incluse</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Refacturation automatisée selon usage réel</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Supervision 24h/24 &amp; support dédié</li>
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Rapports RSE &amp; bilan CO₂ mensuels</li>
       </ul>
     </div>
+
   </div>
 </section>
- 
+
+<!-- HOW -->
 <section id="how">
   <div class="reveal">
     <div class="section-label">Processus</div>
@@ -482,7 +327,7 @@
     <div class="how-step reveal reveal-d1">
       <div class="step-num">01</div>
       <div class="step-title">Audit &amp; dimensionnement</div>
-      <p class="step-desc">Nos experts analysent votre installation électrique, vos besoins réels et le volume de véhicules concernés. Vous repartez avec un plan clair — sans engagement.</p>
+      <p class="step-desc">Nos experts analysent votre installation électrique, vos besoins réels et le volume de véhicules concernés. Vous repartez avec un plan clair et un devis personnalisé.</p>
     </div>
     <div class="how-step reveal reveal-d2">
       <div class="step-num">02</div>
@@ -492,25 +337,32 @@
     <div class="how-step reveal reveal-d3">
       <div class="step-num">03</div>
       <div class="step-title">On gère, vous profitez</div>
-      <p class="step-desc">Elios supervise 24h/24, assure la maintenance et pilote la facturation utilisateurs. Votre seule action : accéder à votre tableau de bord.</p>
+      <p class="step-desc">Elios supervise 24h/24, assure la maintenance et pilote la facturation. Vous recevez chaque mois un rapport complet — consommations, RSE, bilan CO₂. Rien à gérer de votre côté.</p>
     </div>
   </div>
 </section>
- 
+
+<!-- PRICING -->
 <section id="pricing">
   <div class="pricing-header reveal">
     <div class="section-label">Tarification</div>
     <h2>Simple, transparent,<br>sans surprises</h2>
-    <p class="section-sub">Un abonnement fixe mensuel par borne — on gère tout. L'électricité est facturée directement à vos salariés à un tarif inférieur aux bornes publiques.</p>
+    <p class="section-sub">Un abonnement mensuel par borne, dimensionné selon votre site. Vous ne payez que ce que vous consommez réellement — pas plus.</p>
+
   </div>
+
   <div class="pricing-grid">
+
+    <!-- COPRO CARD -->
     <div class="price-card reveal reveal-d1">
       <div class="price-type">Copropriété</div>
       <div class="price-name">Résidentiel Collectif</div>
-      <div class="price-main"><div class="price-amount">150€</div><div class="price-unit">&nbsp;/ borne / mois</div></div>
-      <div class="price-note">+ <strong>électricité facturée à vos résidants</strong> — tarif avantageux, inférieur aux bornes publiques</div>
+      <div class="price-from">À partir de</div>
+      <div class="price-main"><div class="price-amount">119€</div><div class="price-unit">&nbsp;/ borne / mois</div></div>
+      <div class="price-note">Tarif adapté à votre résidence après audit gratuit. <strong>Volume de recharge mensuel inclus.</strong></div>
       <ul class="price-features">
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Installation, câblage et raccordement offerts</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Dimensionnement sur mesure</li>
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Maintenance préventive et curative incluse</li>
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Application résidants &amp; espace syndic</li>
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Facturation individuelle automatisée</li>
@@ -518,25 +370,30 @@
       </ul>
       <a href="#contact" class="btn-secondary" style="text-align:center;width:100%;">Demander un audit</a>
     </div>
+
+    <!-- PME CARD -->
     <div class="price-card popular reveal reveal-d2">
       <div class="popular-badge">Le plus demandé</div>
       <div class="price-type">Entreprise</div>
-      <div class="price-name">Pro &amp; PME</div>
-      <div class="price-main"><div class="price-amount">250€</div><div class="price-unit">&nbsp;/ borne / mois</div></div>
-      <div class="price-note">+ <strong>électricité facturée à vos salariés</strong> — tarif avantageux, inférieur aux bornes publiques</div>
+      <div class="price-name">Professionnels</div>
+      <div class="price-from">À partir de</div>
+      <div class="price-main"><div class="price-amount">119€</div><div class="price-unit">&nbsp;/ borne / mois</div></div>
+      <div class="price-note">Tarif calibré sur votre site après audit gratuit. <strong>Volume de recharge mensuel inclus.</strong></div>
       <ul class="price-features">
-        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>1 borne dédiée par véhicule électrique</li>
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Installation, câblage et raccordement offerts</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Dimensionnement sur mesure selon votre flotte</li>
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Maintenance préventive et curative incluse</li>
-        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Gestion flotte &amp; refacturation employés</li>
+        <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Gestion flotte &amp; refacturation selon usage réel</li>
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Supervision 24h/24 &amp; support dédié</li>
         <li><div class="check-circle"><svg viewBox="0 0 9 9"><polyline points="1.5,4.5 3.5,6.5 7.5,1.5"/></svg></div>Rapports RSE &amp; bilan CO₂ automatisés</li>
       </ul>
       <a href="#contact" class="btn-primary" style="text-align:center;width:100%;">Obtenir un devis</a>
     </div>
+
   </div>
 </section>
- 
+
+<!-- STATS -->
 <section id="stats" style="background:var(--bg2)">
   <div class="stats-inner reveal">
     <div class="stats-glow"></div>
@@ -548,7 +405,8 @@
     </div>
   </div>
 </section>
- 
+
+<!-- WHY -->
 <section id="why">
   <div class="reveal">
     <div class="section-label">Pourquoi Elios</div>
@@ -568,29 +426,25 @@
     <div class="why-card reveal reveal-d3">
       <div class="why-icon-wrap"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
       <div class="why-title">Électricité à prix compétitif</div>
-      <p class="why-desc">Vos salariés rechargent à 0,38 €/kWh — moins cher que n'importe quelle borne publique. Un argument concret pour convaincre.</p>
+      <p class="why-desc">Vos collaborateurs rechargent à un tarif inférieur aux bornes publiques — un avantage concret, immédiatement perceptible au quotidien.</p>
     </div>
     <div class="why-card reveal reveal-d4">
       <div class="why-icon-wrap"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-      <div class="why-title">Pilotage en temps réel</div>
-      <p class="why-desc">Tableau de bord dédié : consommation live, rapports mensuels, alertes, facturation — tout accessible sans décrocher votre téléphone.</p>
+      <div class="why-title">Rapports mensuels inclus</div>
+      <p class="why-desc">Chaque mois, vous recevez un rapport complet — consommations, bilan CO₂, données RSE. Aucune démarche de votre côté, tout arrive automatiquement.</p>
     </div>
   </div>
 </section>
- 
-<!-- CTA WITH INTEGRATED FORM -->
+
+<!-- CONTACT -->
 <section id="contact">
   <div class="cta-box reveal">
- 
-    <!-- Step dots -->
     <div class="form-step-dots">
       <div class="form-dot active" id="fd1"></div>
       <div class="form-dot" id="fd2"></div>
       <div class="form-dot" id="fd3"></div>
       <div class="form-dot" id="fd4"></div>
     </div>
- 
-    <!-- STEP 1 -->
     <div class="form-step active" id="fs1">
       <div class="cta-title">On s'occupe<br>de tout. Vraiment.</div>
       <p class="cta-sub">Combien de salariés ont un véhicule électrique dans votre entreprise ?</p>
@@ -602,8 +456,6 @@
         <button class="form-opt" onclick="pick(1,'Plus de 20 VE','20+')"><div class="opt-num">20+</div>Plus de 20 véhicules électriques</button>
       </div>
     </div>
- 
-    <!-- STEP 2 -->
     <div class="form-step" id="fs2">
       <div class="form-q">Votre entreprise dispose d'un parking privatif ?</div>
       <div class="form-opts">
@@ -612,8 +464,6 @@
         <button class="form-opt" onclick="pick(2,'Pas de parking','non')"><div class="opt-num">—</div>Non, pas de parking privatif</button>
       </div>
     </div>
- 
-    <!-- STEP 3 -->
     <div class="form-step" id="fs3">
       <div class="form-q">Combien de salariés au total dans votre entreprise ?</div>
       <div class="form-opts">
@@ -623,8 +473,6 @@
         <button class="form-opt" onclick="pick(3,'Plus de 200','200+')"><div class="opt-num">—</div>Plus de 200 salariés</button>
       </div>
     </div>
- 
-    <!-- STEP 4 -->
     <div class="form-step" id="fs4">
       <div class="form-q">Vos coordonnées — on vous rappelle sous 24h</div>
       <div class="field-row">
@@ -649,8 +497,6 @@
         </button>
       </div>
     </div>
- 
-    <!-- SUCCESS -->
     <div class="form-step" id="fs-ok">
       <div class="success-wrap">
         <div class="success-check">✓</div>
@@ -668,14 +514,13 @@
         </div>
       </div>
     </div>
- 
   </div>
 </section>
- 
+
 <footer>
   <a href="#" class="logo-wrap">
     <svg viewBox="0 0 180 36" height="22" fill="none">
-      <rect x="0" y="4"  width="22" height="5" rx="1.5" fill="#ffffff"/>
+      <rect x="0" y="4" width="22" height="5" rx="1.5" fill="#ffffff"/>
       <rect x="0" y="15.5" width="22" height="5" rx="1.5" fill="#3ECFA0"/>
       <rect x="0" y="27" width="22" height="5" rx="1.5" fill="#ffffff"/>
       <rect x="34" y="4" width="5" height="28" rx="1.5" fill="#ffffff"/>
@@ -700,127 +545,94 @@
   </ul>
   <div class="footer-copy">© 2025 Elios. Tous droits réservés.</div>
 </footer>
- 
+
 <script>
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzRni-I4vVM7jFW5SdMIyZh_W2ehfyA3f4MfnQNgO7SBR4twQiC4xQFFs3N_muTvoWd-Q/exec';
-  const ans = { ve: '', veLabel: '', parking: '', taille: '' };
- 
-  function pick(step, label, value) {
-    if (step === 1) { ans.veLabel = label; ans.ve = value; }
-    if (step === 2) {
-      ans.parking = label;
-      if (value === 'non') {
-        document.getElementById('fs2').innerHTML = `
+  const ans = { ve:'', veLabel:'', parking:'', taille:'' };
+  function pick(step,label,value) {
+    if(step===1){ans.veLabel=label;ans.ve=value;}
+    if(step===2){
+      ans.parking=label;
+      if(value==='non'){
+        document.getElementById('fs2').innerHTML=`
           <div class="form-q">Pas de parking privatif ?</div>
           <p style="color:var(--muted);font-size:.9rem;line-height:1.7;text-align:center;margin-bottom:24px;">Notre solution nécessite un espace de stationnement privé. Contactez-nous directement, nous étudierons votre situation ensemble.</p>
           <a href="mailto:contact@elios.fr" class="btn-form-submit" style="display:flex;text-decoration:none;justify-content:center;">Nous écrire</a>
-          <button class="btn-form-back" onclick="location.reload()" style="margin-top:10px;width:100%;">← Recommencer</button>
-        `;
+          <button class="btn-form-back" onclick="location.reload()" style="margin-top:10px;width:100%;">← Recommencer</button>`;
         return;
       }
     }
-    if (step === 3) { ans.taille = label; }
- 
-    document.querySelectorAll('#fs' + step + ' .form-opt').forEach(o => o.classList.remove('sel'));
+    if(step===3){ans.taille=label;}
+    document.querySelectorAll('#fs'+step+' .form-opt').forEach(o=>o.classList.remove('sel'));
     event.currentTarget.classList.add('sel');
-    setTimeout(() => goTo(step + 1), 200);
+    setTimeout(()=>goTo(step+1),200);
   }
- 
-  function goTo(n) {
-    document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
-    const target = n === 'ok' ? document.getElementById('fs-ok') : document.getElementById('fs' + n);
-    if (target) target.classList.add('active');
+  function goTo(n){
+    document.querySelectorAll('.form-step').forEach(s=>s.classList.remove('active'));
+    const target=n==='ok'?document.getElementById('fs-ok'):document.getElementById('fs'+n);
+    if(target)target.classList.add('active');
     updateDots(n);
   }
- 
-  function updateDots(current) {
-    const num = parseInt(current);
-    for (let i = 1; i <= 4; i++) {
-      const d = document.getElementById('fd' + i);
-      if (!d) continue;
-      d.classList.remove('active', 'done');
-      if (i < num) d.classList.add('done');
-      else if (i === num) d.classList.add('active');
+  function updateDots(current){
+    const num=parseInt(current);
+    for(let i=1;i<=4;i++){
+      const d=document.getElementById('fd'+i);
+      if(!d)continue;
+      d.classList.remove('active','done');
+      if(i<num)d.classList.add('done');
+      else if(i===num)d.classList.add('active');
     }
   }
- 
-  function submit() {
-    const prenom = document.getElementById('f-prenom').value.trim();
-    const nom = document.getElementById('f-nom').value.trim();
-    const company = document.getElementById('f-company').value.trim();
-    const email = document.getElementById('f-email').value.trim();
-    const tel = document.getElementById('f-tel').value.trim();
- 
-    document.getElementById('err-email').style.display = 'none';
-    document.getElementById('err-tel').style.display = 'none';
- 
-    let ok = true;
-    if (!prenom || !nom || !company) { ok = false; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { document.getElementById('err-email').style.display = 'block'; ok = false; }
-    if (!/^[\d\s\+\-\.]{8,}$/.test(tel)) { document.getElementById('err-tel').style.display = 'block'; ok = false; }
-    if (!ok) return;
- 
-    const btn = document.getElementById('submitBtn');
-    btn.disabled = true;
-    document.getElementById('submitLabel').innerHTML = '<div class="spinner"></div>';
- 
-    const payload = {
-      date: new Date().toLocaleString('fr-FR'),
-      prenom, nom, entreprise: company, email, tel,
-      nb_ve: ans.ve, parking: ans.parking, taille: ans.taille
-    };
- 
-    fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-      .then(() => showOk(company, ans.veLabel))
-      .catch(() => showOk(company, ans.veLabel));
+  function submit(){
+    const prenom=document.getElementById('f-prenom').value.trim();
+    const nom=document.getElementById('f-nom').value.trim();
+    const company=document.getElementById('f-company').value.trim();
+    const email=document.getElementById('f-email').value.trim();
+    const tel=document.getElementById('f-tel').value.trim();
+    document.getElementById('err-email').style.display='none';
+    document.getElementById('err-tel').style.display='none';
+    let ok=true;
+    if(!prenom||!nom||!company){ok=false;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('err-email').style.display='block';ok=false;}
+    if(!/^[\d\s\+\-\.]{8,}$/.test(tel)){document.getElementById('err-tel').style.display='block';ok=false;}
+    if(!ok)return;
+    const btn=document.getElementById('submitBtn');
+    btn.disabled=true;
+    document.getElementById('submitLabel').innerHTML='<div class="spinner"></div>';
+    const payload={date:new Date().toLocaleString('fr-FR'),prenom,nom,entreprise:company,email,tel,nb_ve:ans.ve,parking:ans.parking,taille:ans.taille};
+    fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(()=>showOk(company,ans.veLabel))
+      .catch(()=>showOk(company,ans.veLabel));
   }
- 
-  function showOk(company, ve) {
-    document.getElementById('ok-company').textContent = company;
-    document.getElementById('ok-ve').textContent = ve;
-    document.querySelectorAll('.form-dot').forEach(d => d.classList.add('done'));
+  function showOk(company,ve){
+    document.getElementById('ok-company').textContent=company;
+    document.getElementById('ok-ve').textContent=ve;
+    document.querySelectorAll('.form-dot').forEach(d=>d.classList.add('done'));
     goTo('ok');
   }
- 
-  // Hamburger
-  const hbg = document.getElementById('hamburger');
-  const mob = document.getElementById('mobileMenu');
-  hbg.addEventListener('click', () => {
-    hbg.classList.toggle('open');
-    mob.classList.toggle('open');
+  const hbg=document.getElementById('hamburger');
+  const mob=document.getElementById('mobileMenu');
+  hbg.addEventListener('click',()=>{hbg.classList.toggle('open');mob.classList.toggle('open');});
+  document.querySelectorAll('.mobile-link').forEach(l=>{
+    l.addEventListener('click',()=>{hbg.classList.remove('open');mob.classList.remove('open');});
   });
-  document.querySelectorAll('.mobile-link').forEach(l => {
-    l.addEventListener('click', () => {
-      hbg.classList.remove('open');
-      mob.classList.remove('open');
-    });
-  });
- 
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
- 
-  // Scroll to form + pulse animation on CTA clicks
-  document.querySelectorAll('a[href="#contact"]').forEach(a => {
-    a.addEventListener('click', function(e) {
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  document.querySelectorAll('a[href="#contact"]').forEach(a=>{
+    a.addEventListener('click',function(e){
       e.preventDefault();
-      const target = document.getElementById('contact');
-      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(() => {
-        const box = target.querySelector('.cta-box');
-        box.style.transition = 'box-shadow 0.3s';
-        box.style.boxShadow = '0 0 0 3px rgba(62,207,160,0.5)';
-        setTimeout(() => { box.style.boxShadow = ''; }, 1000);
-      }, 600);
+      const target=document.getElementById('contact');
+      target.scrollIntoView({behavior:'smooth',block:'center'});
+      setTimeout(()=>{
+        const box=target.querySelector('.cta-box');
+        box.style.transition='box-shadow 0.3s';
+        box.style.boxShadow='0 0 0 3px rgba(62,207,160,0.5)';
+        setTimeout(()=>{box.style.boxShadow='';},1000);
+      },600);
     });
   });
 </script>
- 
 </body>
 </html>
- 
-
-
-
-
